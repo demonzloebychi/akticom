@@ -10,6 +10,17 @@
   overflow: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9fd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--contrast-color);
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+}
+
 body {
   --main-background: #000000;
   --main-font: #FFFFFF;
@@ -224,12 +235,13 @@ body.lock {
   transition: all 0.3s ease 0s;
 }
 
-.base__tabs {
-  display: flex;
-  justify-content: space-between;
+________________ .base {
+  position: relative;
 }
 
 .base-btn {
+  position: absolute;
+  margin-top: clamp(350px, 40vw, 550px);
   color: #404040;
   font-family: "Manrope", serif;
   font-size: clamp(22px, 5vw, 36px);
@@ -240,26 +252,32 @@ body.lock {
   padding: 60px 50px;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 0 15px 15px 0;
 }
 
-.item-tabs-base {
+.base__tabs {
+  display: flex;
+  justify-content: space-between;
+}
+.base__tabs .item-tabs-base {
   position: relative;
 }
-
-.item-tabs-base__btns {
+.base__tabs .tabs-base__default {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: clamp(160px, 20vw, 220px);
+}
+.base__tabs .item-tabs-base__btns {
   display: flex;
   gap: 5px;
 }
-
-.item-tabs-base_btn {
+.base__tabs .item-tabs-base_btn {
   background-color: #fff;
   width: 24px;
   border-radius: 50%;
 }
-
-.item-tabs-base__main-text {
-  margin-top: 200px;
+.base__tabs .item-tabs-base__main-text {
   color: #FFF;
   font-family: "Geologica", sans-serif;
   font-size: clamp(45px, 6vw, 102px);
@@ -268,8 +286,7 @@ body.lock {
   text-transform: uppercase;
   z-index: 5;
 }
-
-.item-tabs-base__sub-text {
+.base__tabs .item-tabs-base__sub-text {
   position: absolute;
   font-family: "Geologica", sans-serif;
   font-size: clamp(36px, 5vw, 96px);
@@ -280,8 +297,7 @@ body.lock {
   -webkit-text-fill-color: transparent;
   z-index: -2;
 }
-
-.item-tabs-base__img {
+.base__tabs .item-tabs-base__img {
   position: absolute;
   margin-top: -300px;
   width: 700px;
@@ -303,9 +319,9 @@ body.lock {
   border-radius: 5px;
   -webkit-backdrop-filter: blur(7.5px);
           backdrop-filter: blur(7.5px);
-  padding: 25px;
-  width: clamp(320px, 28vw, 410px);
-  height: clamp(180px, 16vw, 236px);
+  padding: clamp(15px, 30vw, 25px);
+  width: clamp(260px, 28vw, 410px);
+  height: clamp(160px, 16vw, 236px);
   border: 1px solid #C9C9C9;
 }
 .nav-tabs-base .nav-tabs-base__item:hover {
@@ -451,6 +467,10 @@ body.lock {
   font-size: clamp(18px, 4vw, 24px);
   font-weight: 500;
   line-height: 1.1;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .tasks .accordion__title svg {
   position: absolute;
@@ -467,14 +487,15 @@ body.lock {
   text-transform: uppercase;
 }
 .tasks .accordion__text {
+  display: grid;
+  grid-template-rows: 0fr;
   max-width: 400px;
-  height: 0;
-  opacity: 0;
+  overflow: hidden;
   transition: all 0.3s ease 0s;
+  margin: 0 auto;
 }
 .tasks .accordion-item.active .accordion__text {
-  display: block;
-  opacity: 1;
+  grid-template-rows: 1fr;
   height: 100%;
   color: #E2E2E2;
   font-family: "Manrope", serif;
@@ -527,7 +548,7 @@ body.lock {
 .tasks .accordion-item.active .arrow::before {
   right: 10px;
   top: 10px;
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 .tasks .accordion-item.active .arrow::after {
   top: 22px;

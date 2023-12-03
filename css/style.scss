@@ -375,22 +375,26 @@ ________________
         position: absolute;
         top: 100px;
         right:  -100px;
+        overflow: hidden;
     }
     .item-tabs-base__img-line-tab-2{
         position: absolute;
         top: 300px;
         right: 40px;
+        overflow: hidden;
     }
     .item-tabs-base__img-line-tab-3{
         position: absolute;
         max-width: calc(100% * 1.2);
         top: 200px;
         right: -100px;
+        overflow: hidden;
     }
     .item-tabs-base__img-line-tab-3-2{
         position: absolute;
         top: 550px;
         right: 50px;
+        overflow: hidden;
     }
 }
 

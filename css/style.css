@@ -27,6 +27,20 @@ body {
   --contrast-color: #B8FF20;
   background-color: var(--main-background);
   color: var(--main-font);
+  overflow-x: hidden;
+}
+
+.link {
+  color: var(--main-font);
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: "Geologica", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--contrast-color);
 }
 
 .title-h2 {
@@ -43,14 +57,14 @@ body {
   box-shadow: 0px 2px 16px 0px rgba(188, 255, 46, 0.28);
 }
 
-.grey-line {
-  background: rgba(255, 255, 255, 0.2);
-  width: 1px;
-  height: clamp(250px, 30vw, 546px);
+.green-btn:hover {
+  background-color: #D9FF88;
+  box-shadow: 0px 2px 16px 0px rgba(188, 255, 46, 0.28);
 }
 
 body.lock {
   overflow: hidden;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), radial-gradient(165.75% 70.71% at 50% 50%, #31046A 0%, #141414 100%);
 }
 
 .main.active {
@@ -148,15 +162,12 @@ body.lock {
   width: 100%;
   height: 100%;
   transition: all 0.3s ease 0s;
+  z-index: 7;
 }
 
 .menu.active {
   display: flex;
   top: 120px;
-}
-
-body.lock {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), radial-gradient(165.75% 70.71% at 50% 50%, #31046A 0%, #141414 100%);
 }
 
 .menu__wrapper {
@@ -177,47 +188,59 @@ body.lock {
   display: flex;
   flex-direction: column;
   gap: clamp(30px, 3vw, 50px);
+  position: relative;
 }
 
 .menu__link {
-  color: var(--main-font);
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: "Geologica", sans-serif;
-  text-transform: uppercase;
-  font-size: clamp(40px, 5vw, 90px);
+  font-size: clamp(30px, 4vw, 90px);
   font-weight: 600;
   letter-spacing: 1.8px;
 }
 
+.menu__link.active {
+  color: var(--contrast-color);
+}
+
 .sub-menu__list {
+  position: fixed;
+  right: -400%;
+  transition: all 0.3s ease 0s;
+}
+
+.sub-menu__list.open {
+  position: absolute;
+  right: -115%;
+  top: 0;
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 2vw, 30px);
 }
 
 .sub-menu__link {
-  color: var(--main-font);
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: "Geologica", sans-serif;
-  text-transform: uppercase;
-  font-size: clamp(24px, 2.5vw, 40px);
+  font-size: clamp(22px, 2.5vw, 40px);
   letter-spacing: 0.8px;
 }
 
+.sub-menu__link.active {
+  color: var(--contrast-color);
+}
+
 .sub-sub-menu__list {
+  position: fixed;
+  right: -400%;
+  transition: all 0.5s ease 0s;
+}
+
+.sub-sub-menu__list.open {
+  position: absolute;
+  right: -175%;
+  top: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(18px, 2vw, 30px);
+  gap: clamp(16px, 2vw, 30px);
 }
 
 .sub-sub-menu__link {
-  color: var(--main-font);
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: "Geologica", sans-serif;
-  text-transform: uppercase;
   font-size: clamp(16px, 1.5vw, 24px);
   letter-spacing: 0.48px;
 }
@@ -232,11 +255,6 @@ body.lock {
 }
 
 .bottom-menu__link {
-  color: var(--main-font);
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: "Geologica", sans-serif;
-  text-transform: uppercase;
   font-size: clamp(22px, 2vw, 36px);
   gap: 20px;
 }
@@ -272,6 +290,7 @@ ________________ .base {
   padding-left: clamp(30px, 3vw, 70px);
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   border-radius: 0 15px 15px 0;
 }
 
@@ -342,26 +361,23 @@ ________________ .base {
   position: absolute;
   top: 100px;
   right: -100px;
-  overflow: hidden;
 }
 .base__tabs .item-tabs-base__img-line-tab-2 {
   position: absolute;
   top: 300px;
   right: 40px;
-  overflow: hidden;
+  max-width: 100%;
 }
 .base__tabs .item-tabs-base__img-line-tab-3 {
   position: absolute;
   max-width: 120%;
   top: 200px;
   right: -100px;
-  overflow: hidden;
 }
 .base__tabs .item-tabs-base__img-line-tab-3-2 {
   position: absolute;
   top: 550px;
   right: 50px;
-  overflow: hidden;
 }
 
 .nav-tabs-base {
@@ -606,7 +622,7 @@ ________________ .base {
   width: 100%;
   background-color: var(--contrast-color);
   height: 3px;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .tasks .arrow::before {
   top: 0;
@@ -704,7 +720,6 @@ ________________ .base {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background: var(--contrast-color);
   text-align: center;
   white-space: nowrap;
   line-height: 1.1;

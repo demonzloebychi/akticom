@@ -2,7 +2,7 @@ const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.menu');
 const main = document.querySelector('.main');
 const footer = document.querySelector('.footer');
-
+const header = document.querySelector('.header');
 
 
 if (burger){
@@ -12,8 +12,10 @@ if (burger){
         menu.classList.toggle('active');
         main.classList.toggle('active');
         footer.classList.toggle('active');
-
+        header.classList.toggle('active');
     });
+
+
     
 }
 
@@ -32,6 +34,38 @@ for (let i = 0; i < accordionItems.length; i++) {
       }
     }
   });
+};
+
+
+
+
+
+  let link = document.querySelectorAll('.menu__link');
+for(i=0; i<link.length; i++){
+    let subMenu = link[i].nextElementSibling;
+    let thisLink = link[i];
+  link[i].addEventListener('click', function(){
+    subMenu.classList.toggle('open');
+    thisLink.classList.toggle('active');
+  })
+}
+
+  let subLink = document.querySelectorAll('.sub-menu__link');
+for(i=0; i<subLink.length; i++){
+  let subSubMenu = subLink[i].nextElementSibling;
+  let thisSubLink = subLink[i];
+subLink[i].addEventListener('click', function(){
+  subSubMenu.classList.toggle('open');
+  thisSubLink.classList.toggle('active');
+
+      for (let j = 0; j < subLink.length; j++) {
+        if (subLink[j] !== this) {
+          subLink[j].classList.remove("active");
+          subLink[j].nextElementSibling.classList.remove('open');
+        }
+      }
+
+});
 };
 
 

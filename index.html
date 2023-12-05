@@ -11,10 +11,25 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <div class="preloader" id="preloader">
+            <div class="loader-perc">
+                <span id="perc">
+                    0
+                </span>
+            </div>
+            <div class="loader">
+                <div class="loader-indicator">
+    
+                </div>
+            </div>
+
+    </div> -->
+
     <div class="wrapper">
+
         <header class="header">
             <div class="container">
-                <div class="header__wrapper">
+                <div class="header__wrapper _anim-items _anim-no-hide _anim-from-top">
                     <a href="" class="header__logo logo">
                         <img src="/img/Logo.svg" alt="">
                     </a>
@@ -35,7 +50,7 @@
 
                                 <ul class="menu__list">
                                     <li>
-                                        <a href="#" class="menu__link link">
+                                        <a href="#" class="menu__link link menu__link-opens">
                                             Услуги
                                         </a>
                                         <ul class="sub-menu__list">
@@ -252,10 +267,15 @@
             </div>
         </header>
 
+
+
+
+
+
         <main class="main">
 
             <div class="base">
-                <a class="green-btn base-btn">
+                <a class="green-btn base-btn _anim-items _anim-no-hide _anim-from-left">
                     Обсудить проект
                 </a>
                 <div class="container">
@@ -263,7 +283,7 @@
                     <div class="base__tabs tabs-base">
                         <div class="tabs-base__body">
                             <div class="tabs-base__default">
-                                <div class="item-tabs-base__btns">
+                                <div class="item-tabs-base__btns  _anim-items _anim-no-hide _anim-from-left">
                                     <div class="item-tabs-base_btn">
                                         <img src="/img/ic1.svg" alt="">
                                     </div>
@@ -282,7 +302,7 @@
                     
 
 
-                                <h1 class="item-tabs-base__main-text">
+                                <h1 class="item-tabs-base__main-text _anim-items _anim-no-hide _anim-from-left">
                                     Решаем любые </br>
                                     dIGITAL-ЗАДАЧИ
                                 </h1>
@@ -290,18 +310,18 @@
 
 
 
-                                <div class="item-tabs-base__img is-active">
+                                <div class="item-tabs-base__img is-active _anim-items _anim-no-hide _anim-from-right">
                                     <img src="/img/ic-main.png" alt="">
                                 </div>
-                                <div class="item-tabs-base__img main-tab-1">
+                                <div id="dev" class="item-tabs-base__img main-tab-1">
                                     <img class="item-tabs-base__img-back" src="/img/dev-back.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-1" src="/img/line-for-back-dev.png" alt="">
                                 </div>
-                                <div class="item-tabs-base__img main-tab-2">
+                                <div id="prod" class="item-tabs-base__img main-tab-2">
                                     <img class="item-tabs-base__img-back" src="/img/prod-back.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-2" src="/img/line-for-back-prod.png" alt="">
                                 </div>
-                                <div class="item-tabs-base__img main-tab-3">
+                                <div id="rekl" class="item-tabs-base__img main-tab-3">
                                     <img class="item-tabs-base__img-back" src="/img/reklama-back.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-3" src="/img/line-for-back-rekl.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-3-2" src="/img/line-for-back-rekl.png" alt="">
@@ -313,8 +333,8 @@
                         </div>
 
                         
-                        <nav class="tabs-base__nav nav-tabs-base">
-                            <div class="nav-tabs-base__item" data-tab-name="main-tab-1">
+                        <nav class="tabs-base__nav nav-tabs-base _anim-items _anim-no-hide _anim-from-right">
+                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "dev")' onmouseout="mainTab" data-tab-name="main-tab-1">
                                 <div class="nav-tabs-base__img">
                                     <img src="/img/icon-dev.svg" alt="">
                                 </div>
@@ -328,9 +348,9 @@
                                         </svg>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div class="nav-tabs-base__item" data-tab-name="main-tab-2">
+                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "prod")' onmouseout="mainTab" data-tab-name="main-tab-2">
                                 <div class="nav-tabs-base__img">
                                     <img class="base__img-1" src="/img/icon-prod.svg" alt="">
                                     <img class="base__img-2" src="/img/icon-prod.svg" alt="">
@@ -346,9 +366,9 @@
                                         </svg>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div class="nav-tabs-base__item" data-tab-name="main-tab-3">
+                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "rekl")' onmouseout="mainTab" data-tab-name="main-tab-3">
                                 <div class="nav-tabs-base__img">
                                         <img src="/img/icon-rekl.svg" alt="">
                                         <img class="base__img-3" src="/img/icon-rekl-2.svg" alt="">
@@ -364,7 +384,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </nav>
                     </div>
 
@@ -376,7 +396,7 @@
             <div class="year">
                 <div class="container">
                     <div class="year__body">
-                        <div class="year__left">
+                        <div class="year__left  _anim-items _anim-from-left">
                             <div class="year__text">
                                 15 лет
                             </div>
@@ -389,7 +409,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="year__right">
+                        <div class="year__right _anim-items _anim-from-right">
                             <div class="year__img">
                                 <img src="/img/year.png" alt="">
                                 <div class="year__background-title">
@@ -410,10 +430,10 @@
                 </svg>
                 <div class="container">
                     <div class="tasks__wrapper">
-                        <h2 class="tasks__title title-h2">
+                        <h2 class="tasks__title title-h2 _anim-items _anim-from-left">
                             ЗаДАчи, которые мы решаем
                         </h2>
-                        <div class="tasks__body">
+                        <div class="tasks__body _anim-items _anim-from-right">
                             <div class="tasks__left">
 
                             </div>
@@ -532,7 +552,7 @@
             <div class="project">
                 <div class="container">
                     <div class="project__wrapper">
-                        <div class="project__header">
+                        <div class="project__header _anim-items _anim-no-hide _anim-from-right">
                             <h2 class="project__title title-h2">
                                 проекты
                             </h2>
@@ -557,7 +577,7 @@
 
                         <div class="project__body project-tab-1 is-active">
                             <div class="project__item tab-project">
-                                <div class="project__left">
+                                <div class="project__left  _anim-items _anim-no-hide _anim-from-left   _anim-items _anim-no-hide _anim-from-left ">
                                     <h3 class="tab-project__title">
                                         Название проекта
                                     </h3>
@@ -568,7 +588,7 @@
                                         Посмотреть кейс
                                     </a>
                                 </div>
-                                <div class="project__right">
+                                <div class="project__right _anim-items _anim-from-right">
                                     <div class="project__img">
                                         <img src="/img/krepco.png" alt="">
                                     </div>
@@ -576,7 +596,7 @@
                             </div>
 
                             <div class="project__item tab-project">
-                                <div class="project__left">
+                                <div class="project__left  _anim-items _anim-no-hide _anim-from-left">
                                     <h3 class="tab-project__title">
                                         Название проекта
                                     </h3>
@@ -587,7 +607,7 @@
                                         Посмотреть кейс
                                     </a>
                                 </div>
-                                <div class="project__right">
+                                <div class="project__right _anim-items _anim-from-right">
                                     <div class="project__img">
                                         <img src="/img/basis.png" alt="">
                                     </div>
@@ -595,7 +615,7 @@
                             </div>
 
                             <div class="project__item tab-project">
-                                <div class="project__left">
+                                <div class="project__left  _anim-items _anim-no-hide _anim-from-left">
                                     <h3 class="tab-project__title">
                                         Название проекта
                                     </h3>
@@ -606,7 +626,7 @@
                                         Посмотреть кейс
                                     </a>
                                 </div>
-                                <div class="project__right">
+                                <div class="project__right _anim-items _anim-from-right">
                                     <div class="project__img">
                                         <img src="/img/apteka.png" alt="">
                                     </div>
@@ -844,10 +864,10 @@
             </div>
 
 
-            <!-- <div class="discuss">
+            <div class="discuss">
                 <div class="container">
                     <div class="discuss__body">
-                        <div class="discuss__left">
+                        <div class="discuss__left _anim-items _anim-from-left">
                             <h2 class="discuss__title title-h2">
                                 Давайте обсудим ваш проект
                             </h2>
@@ -856,18 +876,23 @@
                                 с Политикой персональных данных
                             </a>
                         </div>
-                        <div class="discuss__right">
+                        <div class="discuss__right _anim-items _anim-from-right">
                             <form action="" class="discuss__form form-discuss">
 
                             </form>
                             <div class="discuss__back-img">
-                                <img src="/img/discuss-back.png" alt="" class="discuss__back-image-1">
-                                <img src="/img/discuss-back.png" alt="" class="discuss__back-image-2">
+                                <div class="discuss__back-img-1">
+                                    <img src="/img/discuss-back.png" alt="">
+                                </div>
+                                <div class="discuss__back-img-2">
+                                    <img src="/img/discuss-back.png" alt="">
+                                </div>
                             </div>
+      
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
 
 

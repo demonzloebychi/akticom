@@ -472,7 +472,7 @@ ________________
         line-height: 1.1;
         text-transform: uppercase;
         z-index: 5;
-
+        white-space: nowrap;
 
   
     }
@@ -622,7 +622,6 @@ ________________
         .year__left {
             display: flex;
             gap: 10px;
-            animation: slideLeft 2s;
             .year__text {
                 @include background-text;
                 writing-mode: vertical-lr;
@@ -964,11 +963,14 @@ ________________
     .discuss__form {
         position: relative;
         z-index: 5;
-        width: 860px;
-        height: 500px;
+        max-width: 860px;
+        max-height: 500px;
+        width: clamp(300px, 50vw, 860px);
+        height: clamp(120%, 10vh, 500px);
         background-color: #141414;
     }
     .form-discuss {
+        display: flex;
     }
     .discuss__back-img-1 {
         position: absolute;
@@ -986,9 +988,158 @@ ________________
     .discuss__back-img img{
 
     }
-   
+
+    .discuss-tab__container{
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 15px;
+        padding-top: 40px;
+        display: flex;
+    }
+
+    .tab-discuss {
+        display: none;
+    }
+    .tab-discuss.is-active {
+        display: block;
+    }
+    .tab__wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .discuss__steps {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+    .discuss__step {
+        color: var(--contrast-color);
+        font-family: 'Manrope', serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+    .discuss__indicate {
+        background-color: #212121;
+        width: 215.333px;
+        height: 8px;
+        position: relative;
+        border-radius: 5px;
+    }
+    .discuss__indicator {
+        position: absolute;
+        // width: 20%;
+        height: 8px;
+        background-color: var(--contrast-color);
+        border-radius: 5px;
+    }
+    .discuss__indicator-1{
+        width: 20%;
+        transform: translate();
+    }
+    .discuss__indicator-2{
+        width: 40%;
+    }
+    .discuss__indicator-3{
+        width: 60%;
+    }
+    .discuss__indicator-4{
+        width: 80%;
+    }
+    .discuss__indicator-5{
+        width: 100%;
+    }
+    .form-discuss__title {
+        color: var(--main-font);
+        font-family: 'Manrope', serif;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+    .form-discuss_btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .form-discuss_btn {
+        color: var(--main-font);
+        background: #262626;
+        display: flex;
+        gap: 15px;
+        border-radius: 5px;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+
+
+    .discuss-nav__btns{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 49px;
+    }
+    .discuss-nav__btn{
+        color: #606060;
+        background: transparent;
+        white-space: nowrap;
+        font-family: 'Manrope', serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.1;
+        cursor: pointer;
+    }
+    .discuss-nav__btn.is-active{
+        color: var(--main-font);
+    }
+    /* Style the input fields */
+    input {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+      }
+      
+      /* Mark input boxes that gets an error on validation: */
+      input.invalid {
+        background-color: #ffdddd;
+      }
+      
+      /* Hide all steps by default: */
+      .tab {
+        display: none;
+      }
+      
+      /* Make circles that indicate the steps of the form: */
+      .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+      }
+      
+      /* Mark the active step: */
+      .step.active {
+        opacity: 1;
+      }
+      
+      /* Mark the steps that are finished and valid: */
+      .step.finish {
+        background-color: #4CAF50;
+      }
     
 }
+
+
+
+
 
 
 

@@ -400,6 +400,7 @@ ________________ .base {
   line-height: 1.1;
   text-transform: uppercase;
   z-index: 5;
+  white-space: nowrap;
 }
 .base__tabs .item-tabs-base__sub-text {
   position: absolute;
@@ -531,7 +532,6 @@ ________________ .base {
 .year .year__body .year__left {
   display: flex;
   gap: 10px;
-  animation: slideLeft 2s;
 }
 .year .year__body .year__left .year__text {
   font-family: "Geologica", sans-serif;
@@ -810,6 +810,14 @@ ________________ .base {
   max-width: 1160px;
 }
 
+.discuss {
+  /* Style the input fields */
+  /* Mark input boxes that gets an error on validation: */
+  /* Hide all steps by default: */
+  /* Make circles that indicate the steps of the form: */
+  /* Mark the active step: */
+  /* Mark the steps that are finished and valid: */
+}
 .discuss .discuss__body {
   margin-top: clamp(80px, 18vw, 280px);
   display: flex;
@@ -834,9 +842,14 @@ ________________ .base {
 .discuss .discuss__form {
   position: relative;
   z-index: 5;
-  width: 860px;
-  height: 500px;
+  max-width: 860px;
+  max-height: 500px;
+  width: clamp(300px, 50vw, 860px);
+  height: clamp(120%, 10vh, 500px);
   background-color: #141414;
+}
+.discuss .form-discuss {
+  display: flex;
 }
 .discuss .discuss__back-img-1 {
   position: absolute;
@@ -851,6 +864,136 @@ ________________ .base {
   right: 0;
   width: clamp(150px, 32vw, 634px);
 }
+.discuss .discuss-tab__container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 15px;
+  padding-top: 40px;
+  display: flex;
+}
+.discuss .tab-discuss {
+  display: none;
+}
+.discuss .tab-discuss.is-active {
+  display: block;
+}
+.discuss .tab__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.discuss .discuss__steps {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.discuss .discuss__step {
+  color: var(--contrast-color);
+  font-family: "Manrope", serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.discuss .discuss__indicate {
+  background-color: #212121;
+  width: 215.333px;
+  height: 8px;
+  position: relative;
+  border-radius: 5px;
+}
+.discuss .discuss__indicator {
+  position: absolute;
+  height: 8px;
+  background-color: var(--contrast-color);
+  border-radius: 5px;
+}
+.discuss .discuss__indicator-1 {
+  width: 20%;
+  transform: translate();
+}
+.discuss .discuss__indicator-2 {
+  width: 40%;
+}
+.discuss .discuss__indicator-3 {
+  width: 60%;
+}
+.discuss .discuss__indicator-4 {
+  width: 80%;
+}
+.discuss .discuss__indicator-5 {
+  width: 100%;
+}
+.discuss .form-discuss__title {
+  color: var(--main-font);
+  font-family: "Manrope", serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.discuss .form-discuss_btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.discuss .form-discuss_btn {
+  color: var(--main-font);
+  background: #262626;
+  display: flex;
+  gap: 15px;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
+.discuss .discuss-nav__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 49px;
+}
+.discuss .discuss-nav__btn {
+  color: #606060;
+  background: transparent;
+  white-space: nowrap;
+  font-family: "Manrope", serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.1;
+  cursor: pointer;
+}
+.discuss .discuss-nav__btn.is-active {
+  color: var(--main-font);
+}
+.discuss input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+.discuss input.invalid {
+  background-color: #ffdddd;
+}
+.discuss .tab {
+  display: none;
+}
+.discuss .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+.discuss .step.active {
+  opacity: 1;
+}
+.discuss .step.finish {
+  background-color: #4CAF50;
+}
+
 .footer {
   margin-top: 100px;
   padding: clamp(30px, 3vw, 50px);

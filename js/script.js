@@ -1,3 +1,42 @@
+document.body.onload = function(){
+  var preloader = document.getElementById('page-preloader');
+  setTimeout(function(){
+    if(!preloader.classList.contains('done')){
+      preloader.classList.add('done');
+    }
+  }, 1000)
+}
+
+// var 
+//   images = document.images,
+//   images_total_count = images.length,
+//   images_loaded_count = 0;
+//   perc_display = document.getElementById('load_perc');
+
+
+// for (var i = 0 < images_total_count; i++ ;){
+//   image_clone = new Image();
+//   image_clone.onload = image_loaded;
+//   image_clone.onerror = image_loaded;
+//   image_clone.src = images[i].src;
+// }
+
+// function image_loaded(){
+//   images_loaded_count++;
+
+//   perc_display.innerHTML = (((100 / images_total_count) * images_loaded_count ) << 0) + '%';
+
+//   if(images_loaded_count >= images_total_count){
+
+//   }
+// }
+
+
+
+
+
+
+
 const animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) {
@@ -37,6 +76,10 @@ if (animItems.length > 0) {
 
 
 
+
+
+
+
 // document.addEventListener("DOMContentLoaded", function() {
   
 //   const mediaFiles = document.querySelectorAll('img, video');
@@ -59,18 +102,6 @@ if (animItems.length > 0) {
   
 // });
 
-
-// let perc = document.querySelector('.perc');
-// let loader = document.querySelector('.loader');
-
-// loader.addEventListener('animationstart', function() {
-//   let count = +perc.textContent;
-//   let inter = setInterval(()=>{
-//     count++;
-//     perc.textContent = '${count}%'
-
-//   },50)
-// })
 
 
 
@@ -275,24 +306,24 @@ projectTab();
 //   fixStepIndicator(n)
 // }
 
-// function nextPrev(n) {
-//   // This function will figure out which tab to display
-//   var x = document.getElementsByClassName("tab");
-//   // Exit the function if any field in the current tab is invalid:
-//   if (n == 1 && !validateForm()) return false;
-//   // Hide the current tab:
-//   x[currentTab].style.display = "none";
-//   // Increase or decrease the current tab by 1:
-//   currentTab = currentTab + n;
-//   // if you have reached the end of the form... :
-//   if (currentTab >= x.length) {
-//     //...the form gets submitted:
-//     document.getElementById("regForm").submit();
-//     return false;
-//   }
-//   // Otherwise, display the correct tab:
-//   showTab(currentTab);
-// }
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab-discuss");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
 
 // function validateForm() {
 //   // This function deals with validation of the form fields

@@ -10,36 +10,41 @@
   opacity: 1;
   visibility: visible;
 }
+.preloader .loader {
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  color: var(--main-font);
+  font-family: "Geologica", serif;
+  font-size: 128px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 2.56px;
+  text-transform: uppercase;
+}
+.preloader .progress-bar {
+  position: absolute;
+  bottom: 100px;
+  width: 80%;
+  height: 80px;
+  background: var(--main-background);
+  border-radius: 15px;
+  left: 10%;
+}
+.preloader .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #5B12B9;
+  height: 80px;
+  border-radius: 15px;
+}
 
 .preloader.done {
   opacity: 0;
   visibility: hidden;
 }
 
-.loader {
-  width: 75px;
-  height: 75px;
-  line-height: 75px;
-  text-align: center;
-  border: 10px solid white;
-  border-radius: 50%;
-  border-top-color: #5B12B9;
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-size: 75px;
-  animation: 0.7s spin infinite linear;
-}
-
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
 ._anim-from-left {
   transform: translate(-120%, 0px);
   transition: all 0.9s ease 0s;

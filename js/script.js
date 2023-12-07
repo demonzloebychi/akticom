@@ -1,36 +1,35 @@
-document.body.onload = function(){
-  var preloader = document.getElementById('page-preloader');
-  setTimeout(function(){
-    if(!preloader.classList.contains('done')){
-      preloader.classList.add('done');
-    }
-  }, 1000)
+var images = document.images,
+  images_total_count = images.length,
+  images_loaded_count = 0;
+  perc_display = document.getElementById('load_perc');
+  progress_bar = document.getElementById('progress');
+
+for (var i = 0; i < images_total_count; i++) {
+  image_clone = new Image();
+  image_clone.onload = image_loaded;
+  image_clone.onerror = image_loaded;
+  image_clone.src = images[i].src;
 }
 
-// var 
-//   images = document.images,
-//   images_total_count = images.length,
-//   images_loaded_count = 0;
-//   perc_display = document.getElementById('load_perc');
+function image_loaded() {
+  images_loaded_count++;
+
+  progress_bar.style.width = `${(100 / images_total_count) * images_loaded_count}%`;
 
 
-// for (var i = 0 < images_total_count; i++ ;){
-//   image_clone = new Image();
-//   image_clone.onload = image_loaded;
-//   image_clone.onerror = image_loaded;
-//   image_clone.src = images[i].src;
-// }
-
-// function image_loaded(){
-//   images_loaded_count++;
-
-//   perc_display.innerHTML = (((100 / images_total_count) * images_loaded_count ) << 0) + '%';
-
-//   if(images_loaded_count >= images_total_count){
-
-//   }
-// }
-
+  perc_display.innerHTML = (((100 / images_total_count) * images_loaded_count) << 0) + '%';
+  
+  if (images_loaded_count >= images_total_count) {
+    document.body.onload = function() {
+      var preloader = document.getElementById('page-preloader');
+      setTimeout(function() {
+        if (!preloader.classList.contains('done')) {
+          preloader.classList.add('done');
+        }
+      }, 200);
+    };
+  }
+}
 
 
 
@@ -78,29 +77,6 @@ if (animItems.length > 0) {
 
 
 
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-  
-//   const mediaFiles = document.querySelectorAll('img, video');
-//   let i = 0
-
-//   Array.from(mediaFiles).forEach((file, index) => {
-//     file.onload = () => {
-//       i++
-
-//       perc.innerHTML == ((i * 100) / mediaFiles.length).toFixied()
-
-//       if(i === mediaFiles.length){
-//         preloader.classList.add('preloader-hide');
-//         perc.innerHTML == 100
-//       }
-
-
-//     }
-//   });
-  
-// });
 
 
 

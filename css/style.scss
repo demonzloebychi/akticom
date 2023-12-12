@@ -47,18 +47,28 @@
 
 
 
-
-
+._anim-fade-in-down{
+    transform: translate(0px, -120px);
+    transition: all 1.2s ease 0s;
+    opacity: 0;
+}
+._anim-fade-in-down._active{
+    transform: translate(0px, 0px);
+    transition: all 1.2s ease 0s;
+    opacity: 1;
+}
 
 
 ._anim-from-left{
     transform: translate(-120%, 0px);
-    transition: all 0.9s ease 0s;
+    transition: all 0.9s ease 0s; 
 }
 ._anim-from-left._active {
     transform: translate(0px, 0px);
     transition: all 0.9s ease 0s;
 }
+
+
 
 ._anim-from-right{
     transform: translate(120%, 0px);
@@ -77,6 +87,25 @@
     transform: translate(0px, 0px);
     transition: all 0.9s ease 0s;
 }
+
+@keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slidein {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+
 
 
 .container{
@@ -493,11 +522,16 @@ ________________
         // width: clamp(300px, 45vw, 100%);
         max-width: 100%;
         z-index: -1;
- 
     }
     .item-tabs-base__img.is-active{
-        display: block;
+        display:block;
+
     }
+    .item-tabs-base__img {
+        animation: fadein 0.5s ease-in-out;
+      }
+      
+
 
     item-tabs-base__img-back {
         position: relative;
@@ -550,6 +584,7 @@ ________________
         height: clamp(160px, 16vw, 236px);
         border: 1px solid #C9C9C9;
         cursor: pointer;
+        transform: translate(0px, 0px);
     }
     .nav-tabs-base__item:hover {
         background-color: #5B12B980;
@@ -568,10 +603,11 @@ ________________
         height: clamp(160px, 16vw, 236px);
         border: 1px solid #C9C9C9;
     }
-    
-    .nav-tabs-base__img {
+    .nav-tabs-base__item:hover .nav-tabs-base__img img {
 
+        // transform: translate(5px, -5px);
     }
+
     .base__img-1{
         margin-left: 40px;
     }
@@ -593,6 +629,21 @@ ________________
         font-size: 24px;
         font-weight: 600;
         line-height: 1.1;
+    }
+    .nav-tabs-base__item:hover .nav-tabs-base__text{
+        animation: pulse 1s;
+        color: var(--contrast-color);
+    }
+    @keyframes pulse {
+        0%{
+            font-size: 24px;
+        }
+        50%{
+            font-size: 54px;
+        }
+        100%{
+            font-size: 24px;
+        }
     }
     .nav-tabs-base__btn {
         display: flex;
@@ -863,15 +914,13 @@ ________________
         color: var(--contrast-color);
         border: 1px solid var(--contrast-color);
     }
-    
-    
     .project__body {
         display: none;
+        position: relative;
     }
     .project__body.is-active {
         display: flex;
         flex-direction: column;  
-
     }
     .project__item {
         margin-top: clamp(25px, 3.1vw, 60px);

@@ -121,8 +121,6 @@ for (let i = 0; i < accordionItems.length; i++) {
 
 
 
-
-
   let link = document.querySelectorAll('.menu__link');
 for(i=0; i<link.length; i++){
     let subMenu = link[i].nextElementSibling;
@@ -132,6 +130,8 @@ for(i=0; i<link.length; i++){
     thisLink.classList.toggle('active');
   })
 }
+
+
 
   let subLink = document.querySelectorAll('.sub-menu__link');
 for(i=0; i<subLink.length; i++){
@@ -156,42 +156,52 @@ subLink[i].addEventListener('click', function(){
 function openTab(event, id){
   var i, content, btn;
 
-content = document.getElementsByClassName('item-tabs-base__img');
-for (i=0; i<content.length; i++){
-  content[i].style.display = 'none';
-}
-btn = document.getElementsByClassName('nav-tabs-base__item')
-for(i=0; i<btn.length; i++){
-  btn[i].className = btn[i].className.replace(' is-active','');
-}
+  content = document.getElementsByClassName('item-tabs-base__img');
+  for (i=0; i<content.length; i++){
+    content[i].style.display = 'none';
+    content[i].style.animation = 'fadein 0.5s ease-in-out';
+  }
 
-document.getElementById(id).style.display = 'block';
-event.curentTarget.className += 'is-active'
-}
+  btn = document.getElementsByClassName('nav-tabs-base__item');
+  for(i=0; i<btn.length; i++){
+    btn[i].className = btn[i].className.replace(' is-active','');
+  }
 
-// function closeTab(event, id){
-//   var i, content, btn;
-
-// content = document.getElementsByClassName('item-tabs-base__img');
-// for (i=0; i<content.length; i++){
-//   content[i].style.display = 'none';
-// }
-// btn = document.getElementsByClassName('nav-tabs-base__item')
-// for(i=0; i<btn.length; i++){
-//   btn[i].className = btn[i].className.replace(' is-active','');
-// }
-
-// document.getElementById(id).style.display = 'block';
-// event.curentTarget.className += 'is-active'
-// }
-function closeTab (){
-
+  document.getElementById(id).style.display = 'block';
+  event.currentTarget.className += ' is-active';
 }
 
 
 
+let projectTab = function () {
+  let projectTabNav = document.querySelectorAll('.nav-project__item'),
+    projectTabContent = document.querySelectorAll('.project__body'),
+    projectTabName;
 
+  projectTabNav.forEach(item => {
+    item.addEventListener('click', selectProjectTabNav);
+  });
 
+  function selectProjectTabNav() {
+    projectTabNav.forEach(item => {
+      item.classList.remove('is-active');
+    });
+    this.classList.add('is-active');
+    projectTabName = this.getAttribute('data-tab-name');
+    selectProjectTabContent(projectTabName);
+  };
+
+  function selectProjectTabContent(projectTabName) {
+    projectTabContent.forEach(item => {
+      item.classList.contains(projectTabName) ? item.classList.add('is-active') : item.classList.remove('is-active');
+    });
+
+    projectTabContent.forEach(item => {
+      item.style.animation = 'slidein 0.5s ease-in-out';
+    });
+  }
+};
+projectTab();
 
 
 
@@ -217,7 +227,11 @@ let mainTab = function () {
   function selectMainTabContent(mainTabName) {
     mainTabContent.forEach(item => {
       item.classList.contains(mainTabName)? item.classList.add('is-active'): item.classList.remove('is-active');
-    })
+    });
+
+    mainTabContent.forEach(item => {
+      item.style.animation = 'fadein 0.5s ease-in-out';
+    });
   }
 
 };
@@ -225,33 +239,8 @@ mainTab();
 
 
 
-let projectTab = function () {
-  let projectTabNav = document.querySelectorAll('.nav-project__item'),
-    projectTabContent = document.querySelectorAll('.project__body'),
-    projectTabName;
 
-    projectTabNav.forEach(item => {
-    item.addEventListener('click',selectProjectTabNav)
-  });
-  
-  function selectProjectTabNav(){
-    projectTabNav.forEach(item => {
-        item.classList.remove('is-active');
 
-      });
-    this.classList.add('is-active');
-    projectTabName = this.getAttribute('data-tab-name');
-    selectProjectTabContent(projectTabName);
-  };
-
-  function selectProjectTabContent(projectTabName) {
-    projectTabContent.forEach(item => {
-      item.classList.contains(projectTabName)? item.classList.add('is-active'): item.classList.remove('is-active');
-    })
-  }
-
-};
-projectTab();
 
 
 

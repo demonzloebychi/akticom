@@ -272,10 +272,11 @@
 
 
 
+
         <main class="main">
 
             <div class="base">
-                <a class="green-btn base-btn  _anim-items _anim-no-hide _anim-from-left">
+                <a class="base-btn  _anim-items _anim-no-hide _anim-from-left">
                     Обсудить проект
                 </a>
                 <div class="container">
@@ -310,21 +311,38 @@
 
 
                             
-                                <div class="item-tabs-base__img is-active _anim-items _anim-no-hide _anim-from-right-bot">
+                                <div id="defaultImage" class="item-tabs-base__img defaul-image is-active _anim-items _anim-no-hide _anim-from-right-bot">
                                     <img src="/img/ic-main.png" alt="">
                                 </div>
-                                <div id="dev" class="item-tabs-base__img main-tab-1">
+
+                                <div id="dev" class="item-tabs-base__img main-tab-1 main-closeset">
                                     <img class="item-tabs-base__img-back" src="/img/dev-back.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-1" src="/img/line-for-back-dev.png" alt="">
+                                    <div class="item-tabs-base__texts">
+                                        <p class="base_margin-l">DEVELOPMENT</p>
+                                        <p>DESIGN UI/UX</p>
+                                        <p class="base_margin-b">DEVELOPMENT</p>
+                                    </div>
                                 </div>
-                                <div id="prod" class="item-tabs-base__img main-tab-2">
+                                <div id="prod" class="item-tabs-base__img main-tab-2  main-closeset">
                                     <img class="item-tabs-base__img-back" src="/img/prod-back.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-2" src="/img/line-for-back-prod.png" alt="">
+                                    <div class="item-tabs-base__texts">
+                                        <p>MARKETING</p>
+                                        <p class="base_margin-l">SEO OPTIMIZATION</p>
+                                        <p class="base_margin-b">SEO OPTIMIZATION</p>
+                                    </div>
                                 </div>
-                                <div id="rekl" class="item-tabs-base__img main-tab-3">
+                                <div id="rekl" class="item-tabs-base__img main-tab-3  main-closeset">
                                     <img class="item-tabs-base__img-back" src="/img/reklama-back.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-3" src="/img/line-for-back-rekl.png" alt="">
                                     <img class="item-tabs-base__img-line-tab-3-2" src="/img/line-for-back-rekl.png" alt="">
+                                    <div class="item-tabs-base__texts">
+                                        <p class="base_margin-r">TARGET</p>
+                                        <p class="base_margin-l">advertising</p>
+                                        <p class="base_margin-b">TARGET</p>
+                                        <p class="base_margin-i">TARGET</p>
+                                    </div>
                                 </div>
 
 
@@ -332,9 +350,10 @@
                             
                         </div>
 
+
                         
                         <nav class="tabs-base__nav nav-tabs-base _anim-items _anim-no-hide _anim-from-right">
-                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "dev")' onmouseout="mainTab" data-tab-name="main-tab-1">
+                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "dev")' onmouseout='openTab(event, "dev")' data-tab-name="main-tab-1"  href="/develop.html">
                                 <div class="nav-tabs-base__img">
                                     <img src="/img/icon-dev.svg" alt="">
                                 </div>
@@ -350,7 +369,7 @@
                                 </div>
                             </a>
 
-                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "prod")' onmouseout="mainTab" data-tab-name="main-tab-2">
+                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "prod")' onmouseout='openTab(event, "prod")' data-tab-name="main-tab-2">
                                 <div class="nav-tabs-base__img">
                                     <img class="base__img-1" src="/img/icon-prod.svg" alt="">
                                     <img class="base__img-2" src="/img/icon-prod.svg" alt="">
@@ -368,7 +387,7 @@
                                 </div>
                             </a>
 
-                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "rekl")' onmouseout="mainTab" data-tab-name="main-tab-3">
+                            <a class="nav-tabs-base__item" onmouseover='openTab(event, "rekl")' onmouseout='openTab(event, "rekl")' data-tab-name="main-tab-3">
                                 <div class="nav-tabs-base__img">
                                         <img src="/img/icon-rekl.svg" alt="">
                                         <img class="base__img-3" src="/img/icon-rekl-2.svg" alt="">
@@ -396,7 +415,7 @@
             <div class="year">
                 <div class="container">
                     <div class="year__body">
-                        <div class="year__left  _anim-items _anim-from-left">
+                        <div class="year__left  _anim-items _anim-no-hide _anim-fade-in-left">
                             <div class="year__text">
                                 15 лет
                             </div>
@@ -411,8 +430,8 @@
                         </div>
                         <div class="year__right">
                             <div class="year__img">
-                                <img src="/img/year.png" alt="" class="_anim-items _anim-from-right-bot">
-                                <div class="year__background-title  _anim-items _anim-from-right">
+                                <img src="/img/year.png" alt="" class="_anim-items _anim-no-hide _anim-from-right-bot">
+                                <div class="year__background-title  _anim-items _anim-no-hide _anim-fade-in-right">
                                     <p>SEO / DEVELOPMENT / Design</p>
                                     <p class="year__margin">Mobile / SEO / DevelopMent / Design</p>
                                     <p>SEO / DEVELOPMENT / Design</p>
@@ -430,10 +449,10 @@
                 </svg>
                 <div class="container">
                     <div class="tasks__wrapper">
-                        <h2 class="tasks__title title-h2 _anim-items _anim-from-left">
+                        <h2 class="tasks__title title-h2 _anim-items _anim-no-hide _anim-fade-in-left">
                             ЗаДАчи, которые мы решаем
                         </h2>
-                        <div class="tasks__body _anim-items _anim-from-right">
+                        <div class="tasks__body _anim-items _anim-no-hide _anim-fade-in-right">
                             <div class="tasks__left">
 
                             </div>
@@ -552,11 +571,11 @@
             <div class="project">
                 <div class="container">
                     <div class="project__wrapper">
-                        <div class="project__header _anim-items _anim-no-hide _anim-from-right">
-                            <h2 class="project__title title-h2">
+                        <div class="project__header ">
+                            <h2 class="project__title title-h2 _anim-items _anim-no-hide _anim-fade-in-left">
                                 проекты
                             </h2>
-                            <nav class="project__nav nav-project">
+                            <nav class="project__nav nav-project  _anim-items _anim-no-hide _anim-fade-in-right">
                                 <div class="nav-project__item is-active" data-tab-name="project-tab-1">
                                     SEO
                                 </div>
@@ -577,7 +596,7 @@
 
                         <div class="project__body project-tab-1 is-active">
                             <div class="project__item tab-project">
-                                <div class="project__left  _anim-items _anim-no-hide _anim-from-left   _anim-items _anim-no-hide _anim-from-left ">
+                                <div class="project__left  _anim-items _anim-no-hide _anim-fade-in-left">
                                     <h3 class="tab-project__title">
                                         Название проекта
                                     </h3>
@@ -588,7 +607,7 @@
                                         Посмотреть кейс
                                     </a>
                                 </div>
-                                <div class="project__right _anim-items _anim-from-right">
+                                <div class="project__right _anim-items _anim-no-hide _anim-fade-in-right">
                                     <div class="project__img">
                                         <img src="/img/krepco.png" alt="">
                                     </div>
@@ -596,7 +615,7 @@
                             </div>
 
                             <div class="project__item tab-project">
-                                <div class="project__left  _anim-items _anim-no-hide _anim-from-left">
+                                <div class="project__left  _anim-items _anim-no-hide _anim-fade-in-left">
                                     <h3 class="tab-project__title">
                                         Название проекта
                                     </h3>
@@ -607,7 +626,7 @@
                                         Посмотреть кейс
                                     </a>
                                 </div>
-                                <div class="project__right _anim-items _anim-from-right">
+                                <div class="project__right _anim-items _anim-no-hide _anim-fade-in-right">
                                     <div class="project__img">
                                         <img src="/img/basis.png" alt="">
                                     </div>
@@ -615,7 +634,7 @@
                             </div>
 
                             <div class="project__item tab-project">
-                                <div class="project__left  _anim-items _anim-no-hide _anim-from-left">
+                                <div class="project__left  _anim-items _anim-no-hide _anim-fade-in-left">
                                     <h3 class="tab-project__title">
                                         Название проекта
                                     </h3>
@@ -626,7 +645,7 @@
                                         Посмотреть кейс
                                     </a>
                                 </div>
-                                <div class="project__right _anim-items _anim-from-right">
+                                <div class="project__right _anim-items _anim-no-hide _anim-fade-in-right">
                                     <div class="project__img">
                                         <img src="/img/apteka.png" alt="">
                                     </div>
@@ -867,16 +886,16 @@
             <div class="discuss">
                 <div class="container">
                     <div class="discuss__body">
-                        <div class="discuss__left _anim-items _anim-from-left">
+                        <div class="discuss__left _anim-items _anim-no-hide _anim-fade-in-left">
                             <h2 class="discuss__title title-h2">
-                                Давайте обсудим ваш проект
+                                Давайте обсудим <br> ваш проект
                             </h2>
                             <a href="" class="discuss__info">
                                 Нажимая на кнопку, вы соглашаетесь
                                 с Политикой персональных данных
                             </a>
                         </div>
-                        <div class="discuss__right _anim-items _anim-from-right">
+                        <div class="discuss__right _anim-items _anim-no-hide _anim-fade-in-right">
                             <form action="" class="discuss__form form-discuss">
                                 <!-- One "tab" for each step in the form: -->
                             <div class="discuss-tab__container">
@@ -1123,6 +1142,7 @@
                                 <!-- Circles which indicates the steps of the form: -->
                             </div>
                             </form>
+
                             <div class="discuss__back-img">
                                 <div class="discuss__back-img-1">
                                     <img src="/img/discuss-back.png" alt="">

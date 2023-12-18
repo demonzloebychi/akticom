@@ -1,8 +1,8 @@
 var images = document.images,
-  images_total_count = images.length,
-  images_loaded_count = 0;
-  perc_display = document.getElementById('load_perc');
-  progress_bar = document.getElementById('progress');
+    images_total_count = images.length,
+    images_loaded_count = 0;
+    perc_display = document.getElementById('load_perc');
+    progress_bar = document.getElementById('progress');
 
 for (var i = 0; i < images_total_count; i++) {
   image_clone = new Image();
@@ -13,10 +13,7 @@ for (var i = 0; i < images_total_count; i++) {
 
 function image_loaded() {
   images_loaded_count++;
-
   progress_bar.style.width = `${(100 / images_total_count) * images_loaded_count}%`;
-
-
   perc_display.innerHTML = (((100 / images_total_count) * images_loaded_count) << 0) + '%';
   
   if (images_loaded_count >= images_total_count) {
@@ -81,28 +78,23 @@ if (animItems.length > 0) {
 
 
 
-
+const burgerIcon = document.querySelector('.burger');
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.menu');
 const main = document.querySelector('.main');
 const footer = document.querySelector('.footer');
 const header = document.querySelector('.header');
 
-
-if (burger){
-    burger.addEventListener("click", function(e){
-        document.body.classList.toggle('lock');
-        burger.classList.toggle('active');
-        menu.classList.toggle('active');
-        main.classList.toggle('active');
-        footer.classList.toggle('active');
-        header.classList.toggle('active');
-    });
-
-
-    
-}
-
+if (burgerIcon){
+  burgerIcon.addEventListener("click", function(e){
+      document.body.classList.toggle('lock');
+      burger.classList.toggle('active');
+      menu.classList.toggle('active');
+      main.classList.toggle('active');
+      footer.classList.toggle('active');
+      header.classList.toggle('active');
+  });
+} 
 
 
 const accordionItems = document.querySelectorAll(".accordion-item");
@@ -153,9 +145,16 @@ subLink[i].addEventListener('click', function(){
 
 
 
+
+
 function openTab(event, id){
   var i, content, btn;
 
+  // const closestImage = document.querySelectorAll('.main-closeset');
+  closestImage1 = document.querySelector('.main-tab-1');
+  closestImage2 = document.querySelector('.main-tab-2');
+  closestImage3 = document.querySelector('.main-tab-3');
+  defaultImage = document.querySelector('.defaul-image');
   content = document.getElementsByClassName('item-tabs-base__img');
   for (i=0; i<content.length; i++){
     content[i].style.display = 'none';
@@ -169,8 +168,15 @@ function openTab(event, id){
 
   document.getElementById(id).style.display = 'block';
   event.currentTarget.className += ' is-active';
+  
+  if (event.type === 'mouseout'){
+    // closestImage.style.display = 'none';
+    closestImage1.style.display = 'none';
+    closestImage2.style.display = 'none';
+    closestImage3.style.display = 'none';
+    defaultImage.style.display = 'block';
+  }
 }
-
 
 
 let projectTab = function () {
@@ -197,7 +203,7 @@ let projectTab = function () {
     });
 
     projectTabContent.forEach(item => {
-      item.style.animation = 'slidein 0.5s ease-in-out';
+      item.style.animation = 'fadein 1s ease';
     });
   }
 };

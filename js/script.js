@@ -247,6 +247,75 @@ mainTab();
 
 
 
+// const swiper = new Swiper('.swiper', {
+//   // Optional parameters
+//   direction: 'vertical',
+//   loop: true,
+
+//   // If we need pagination
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+
+//   // And if we need scrollbar
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+// });
+
+
+
+const swiperProducts = new Swiper('.products__body', {
+
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  spaceBetween: 40,
+  breakpoints: {
+    870: { slidesPerView: 1.8, },
+
+    870: {slidesPerView: 2.4, },
+
+    1700: { slidesPerView: 3.8,}
+},
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+
+const swiperTeam = new Swiper('.team__body', {
+
+
+  navigation: {
+    nextEl: '.team-next',
+    prevEl: '.team-prev',
+  },
+  spaceBetween: 20,
+  breakpoints: {
+    485: { slidesPerView: 1.8, },
+
+    740: { slidesPerView: 2.2, },
+
+    1100: {slidesPerView: 3.4, },
+
+    1620: { slidesPerView: 4.8,},
+},
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+});
+
+
+
 
 
 

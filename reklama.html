@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="preloader" id="page-preloader">
+        <div class="loader">
+            <span id="load_perc">
+                0%
+            </span>
+        </div>
+        <div class="progress-bar">
+            <span class="progress" id="progress">
+                
+            </span>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <div class="header__wrapper _anim-items _anim-no-hide _anim-from-top">
+                    <a href="/index.html" class="header__logo logo">
+                        <img src="/img/Logo.svg" alt="">
+                    </a>
+                    <div class="burger">
+                        <div class="header__burger">
+                            <span></span>
+                        </div>
+                        <div class="header__burger-text">
+                            Меню
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__menu menu">
+                    <div class="container">
+                        <div class="menu__wrapper">
+                            <div class="menu__top">
+
+                                <ul class="menu__list">
+                                    <li>
+                                        <a href="#" class="menu__link link menu__link-opens">
+                                            Услуги
+                                        </a>
+                                        <ul class="sub-menu__list">
+                                            <li>
+                                                <a href="#" class="sub-menu__link link">
+                                                    Дизайн
+                                                </a>
+                                                <ul class="sub-sub-menu__list">
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Дизайн сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Дизайн мобильного приложения
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Дизайн корпоративных сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Дизайн интернет-магазина
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="sub-menu__link link">
+                                                    Разработка
+                                                </a>
+                                                <ul class="sub-sub-menu__list">
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Разработка сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Разработка мобильного приложения
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Разработка корпоративных сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Разработка интернет-магазина
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="sub-menu__link link">
+                                                    Аналитика
+                                                </a>
+                                                <ul class="sub-sub-menu__list">
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Аналитика сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Аналитика мобильного приложения
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Аналитика корпоративных сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Аналитика интернет-магазина
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="sub-menu__link link">
+                                                    Продвижение
+                                                </a>
+                                                <ul class="sub-sub-menu__list">
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Продвижение сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Продвижение мобильного приложения
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Продвижение корпоративных сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Продвижение интернет-магазина
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="sub-menu__link link">
+                                                    Реклама
+                                                </a>
+                                                <ul class="sub-sub-menu__list">
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Реклама сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Реклама мобильного приложения
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Реклама корпоративных сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Реклама интернет-магазина
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="sub-menu__link link">
+                                                    Техподдержка
+                                                </a>
+                                                <ul class="sub-sub-menu__list">
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Техподдержка сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Техподдержка мобильного приложения
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Техподдержка корпоративных сайтов
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="sub-sub-menu__link link">
+                                                            Техподдержка интернет-магазина
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu__link link">
+                                            КЕЙСЫ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu__link link">
+                                            БЛОГ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu__link link">
+                                            КОНТАКТЫ
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                            <div class="menu__bottom">
+                                <ul class="bottom-menu__list">
+                                    <li>
+                                        <a href="" class="bottom-menu__link link">
+                                            +7 (846) 313-23-20
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-menu__link link">
+                                            +7 (846) 313-23-20
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-menu__link link">
+                                            mail@akticom.ru
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-menu__btn green-btn">
+                                            Обсудить проект
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="base">
+                <a class="base-btn  _anim-items _anim-no-hide _anim-from-left">
+                    Обсудить проект
+                </a>
+                <div class="container">
+                    <div class="base__tabs tabs-base">
+                        
+                        <div class="tabs-base__default">
+                            <div class="item-tabs-base__btns  _anim-items _anim-no-hide _anim-from-left">
+                                <div class="item-tabs-base_btn">
+                                    <img src="/img/ic1.svg" alt="">
+                                </div>
+                                <div class="item-tabs-base_btn">
+                                    <img src="/img/ic2.svg" alt="">
+                                </div>
+                                <div class="item-tabs-base_btn">
+                                    <img src="/img/ic3.svg" alt="">
+                                </div>
+                            </div>
+
+
+                            <div class="background-image-pink-plus">
+                                <img src="/img/dev-pink-back.png" alt="">
+                            </div>
+                
+
+                            <div class="base--reklama"></div>
+                            <h1 class="item-tabs-base__main-text _anim-items _anim-no-hide _anim-fade-in-down">
+                                РЕКЛАМА
+                            </h1>
+                            <p class="item-tabs-base__support-text _anim-items _anim-no-hide _anim-fade-in-left">
+                                Устраивает количество лидов? <br> Будет еще больше!                            </p>
+
+
+
+                        
+                            <div class="item-tabs-base__img is-active _anim-items _anim-no-hide _anim-from-right-bot base-background">
+                                    <img class="item-tabs-base__img-back" src="/img/reklama-abstract.png" alt="">
+                                    <img class="item-tabs-base__img-line-tab-1" src="/img/line-for-back-dev.png" alt="">
+                                    <div class="item-tabs-base__texts">
+                                        <p class="base_margin-l">MARKETING</p>
+                                        <p>contextual ads</p>
+                                        <p class="base_margin-big-r">ADS</p>
+                                        <p class="base_margin-small-b">SEO OPTIMIZATION</p>
+                                    </div>
+                                
+                            </div>
+
+                       
+
+
+                        </div>  
+                         
+  
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="info">
+                <div class="container">
+
+                </div>
+            </div>
+
+        </main>
+
+
+
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__left">
+                        <div class="footer__logo logo">
+                            <img src="/img/Logo.svg" alt="">
+                        </div>
+                        <a href="" class="footer__akticom">
+                            © 2009–2023, Akticom
+                        </a>
+                    </div>
+                    <div class="footer__center">
+                        <div class="footer__list">
+                            <a href="" class="footer__link">
+                                Услуги  
+                            </a>
+                            <a href="" class="footer__link">
+                                Кейсы  
+                            </a>
+                            <a href="" class="footer__link">
+                                Блог  
+                            </a>
+                            <a href="" class="footer__link">
+                                Контакты  
+                            </a>
+                        </div>       
+                    </div>
+                    <div class="footer__right">
+                        <div class="footer__phone">
+                            <a href="tel:74954093216" class="footer__link footer__link-phone">
+                                +7 (495) 409-32-16
+                            </a>
+                            <a href="tel:78463132320" class="footer__link footer__link-phone">
+                                +7 (846) 313-23-20
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>
+</html>

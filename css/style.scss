@@ -196,6 +196,16 @@ body{
     line-height: 1.1;
     text-transform: uppercase;
 }
+.title-h3{
+    color: var(--main-font);
+    font-family: 'Geologica', sans-serif;
+    font-size: clamp(20px, 4vw, 54px);
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+
 .green-btn {
     background-color: var(--contrast-color);
     box-shadow: 0px 2px 16px 0px rgba(188, 255, 46, 0.28);
@@ -452,6 +462,16 @@ ________________
     position: relative;
 
 }
+.base--reklama{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 928.139px;
+    background: radial-gradient(closest-side, rgba(0, 8, 255, 0.185), transparent);
+    left: -50%;
+    top: 0;
+    z-index: -1;
+}
 .base-btn{
     position: absolute;
     margin-top: clamp(360px, 40vw, 570px);
@@ -512,6 +532,7 @@ ________________
     .item-tabs-base_btn {
         background-color: #fff;
         width: 24px;
+        height: 24px;
         border-radius: 50%;
     }
     
@@ -591,14 +612,23 @@ ________________
         flex-direction: column;
         gap: 33px;
     }
+
     .base_margin-l{
         margin-left: -120px;
     }
     .base_margin-r{
         margin-left: 220px;
     }
+    .base_margin-big-r{
+        margin-top: -60px;
+        margin-left: 820px;
+    }
     .base_margin-b{
         margin-top: 300px;
+        margin-left: 240px;
+    }
+    .base_margin-small-b{
+        margin-top: 80px;
         margin-left: 240px;
     }
     .base_margin-i{
@@ -668,7 +698,9 @@ ________________
 
         // transform: translate(5px, -5px);
     }
-
+    .nav-tabs-base__img div{
+        margin-top: -2%;
+    }
     .base__img-1{
         margin-left: 40px;
     }
@@ -1296,24 +1328,48 @@ ________________
     margin-top: clamp(200px, 35vw, 550px);
     position: relative;
     .start__body {
-
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .start__wrapper{
+        display: block;
+        border-radius: 20px;
+        background: #1D1D1D;
+        padding: 64px 264px 51px 68px;
+        max-width: 1072px;
+        width: 80%;
     }
     .start__title {
-        margin-bottom: 70px;
+        display: block;
+        margin-bottom: 33px;
+        padding-bottom: 19px;
+        border-bottom: 3px solid  var(--contrast-color);
+        white-space: nowrap;
+        width: 110%;
     }
-    .title-h2 {
+    .start__text{
+        color: #DBDBDB;
+        font-family: 'Geologica', serif;
+        font-size: clamp(16px, 2.8vw, 40px);
+        font-weight: 400;
+        line-height: 1.3;
+        text-transform: uppercase;
+        margin-bottom: 77px;
+        white-space: nowrap;
+
     }
     .start__btns {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 50px;
         flex-wrap: wrap;
     }
     .start__btn {
         background-color: #262626;
         color: #FFF;
         font-family: 'Manrope', serif;
-        font-size: 24px;
+        font-size: clamp(16px, 2vw, 24px);
         font-weight: 500;
         line-height: 1.1;
         border-radius: 5px;
@@ -1325,70 +1381,189 @@ ________________
 
     }
     .start__img {
-        max-width: 70%;
+        max-width: 55%;
         z-index: -1;
         position: absolute;
         top: -32%;
-        right: 0;
+        right: -5%;
         background: no-repeat  url('../img/start-back.png');
         background-position: 50% 50%;
-        background-size: 120%;
+        background-size: 80%;
         img{
             max-width: 100%;
         }
     }
 }
 
-.arrow-right {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 230px;
-    height: 20px;
-    padding: 13px;
-    div {
 
+
+
+
+.products {
+    margin-top: 500px;
+    .products__body {
         position: relative;
-        top: 0;
-        width: 40px;
-        height: 2px;
-        background-color: var(--contrast-color);
-        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-        left:0;
-        display: block;
+
     }
-    div::after {
-        content: '';
+    .products__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+        margin-bottom: 62px;
+        border-bottom: 1px solid var(--main-font);
+    }
+    .swiper {
+        width: 100%;
+        height: 700px;
+        padding-top: 100px;
+    }
+    .products__btns{
+        display: flex;
+        gap: 20px;
+        top: 120px;
+        right: 180px;
         position: absolute;
-        width: 10px;
-        height: 2px;
-        top: -3px;
-        right: -3px;
-        background-color: var(--contrast-color);
-        transform: rotate(45deg);
     }
-    div::before {
-        content: '';
-        position: absolute;
-        width: 10px;
-        height: 2px;
-        top: 3px;
-        right: -3px;
-        background-color: var(--contrast-color);
-        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-        transform: rotate(-45deg);
+    .swiper-button-prev{
+        // margin-left: 85%;
     }
-    :hover {
-        animation: arrow-right 1s linear infinite;
-    }  
+    .swiper-button-next{
+        // right: 100px;
+        left: 80px;
+    }
+    .square__btn{
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+    .products__cards {
+        margin-left: 15px;
+        padding-left: calc((100% - 1760px) / 2);
+    }
+
+   
+    .card-products {
+        border-radius: 15px;
+        background: #525252;
+        width: 450px;
+        height: 410px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-products__top{
+        display: flex;
+        justify-content: space-between;
+    }
+    .card-products__bottom{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+    .card-products__num {
+        color: var(--contrast-color);
+        font-family: 'Geologica', serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+    .card-products__name {
+        color: #FFF;
+        font-family: 'Manrope', serif;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.1;
+        white-space: nowrap;
+    }
+    .card-products__line{
+        margin-top: 20px;
+        width: 100%;
+        height: 1px;
+        background-color: var(--contrast-color);
+    }
 }
 
 
+.team {
+    margin-top: 500px;
+    .team__body {
+        position: relative;
+    }
+    .swiper {
+        width: 100%;
+        height: 800px;
+        padding-top: 100px;
+    }
+    .container {
+    }
+    .team__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+        margin-bottom: 62px;
+        border-bottom: 1px solid var(--main-font);
+    }
+    .team__title {
+    }
 
-.products{
-    margin-top: 300px;
-    width: 100%;
-    height: 1700px;
+    .team__btns {
+        display: flex;
+        gap: 20px;
+        top: 120px;
+        right: 180px;
+        position: absolute;
+    }
+    .swiper-button-prev {
+    }
+    .square__btn{
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+    .swiper-button-next {
+        left: 80px;
+    }
+    .swiper__wrapper {
+    }
+    .team__cards {
+        margin-left: 15px;
+        padding-left: calc((100% - 1760px) / 2);
+    }
+    .card-team {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .card-team__img {
+        max-width: 100%;
+    }
+    .card-team__name {
+        color: var(--main-font);
+        font-family: 'Manrope', serif;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.72px;
+        margin-top: 10px;
+    }
+    .card-team__post {
+        color: #989898;
+        font-family: 'Manrope', serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: -0.72px;
+    }
+}
+
+
+.info{
+    margin-top: 500px;
 }
 
 

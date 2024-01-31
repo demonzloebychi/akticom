@@ -150,6 +150,16 @@
   -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
 }
 
+.swiper-scrollbar {
+  width: 100%;
+  height: 20px;
+}
+
+.swiper-scrollbar-drag {
+  background-color: var(--contrast-color);
+  cursor: pointer;
+}
+
 body {
   --main-background: #000000;
   --main-font: #FFFFFF;
@@ -158,6 +168,16 @@ body {
   background-color: var(--main-background);
   color: var(--main-font);
   overflow-x: hidden;
+}
+
+.background-text {
+  font-family: "Geologica", sans-serif;
+  font-size: clamp(36px, 5vw, 96px);
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #757575;
+  -webkit-text-fill-color: transparent;
 }
 
 .link {
@@ -565,7 +585,11 @@ ________________ .base {
   gap: 33px;
 }
 .base__tabs .base_margin-l {
-  margin-left: -120px;
+  margin-top: -50px;
+  margin-left: -320px;
+}
+.base__tabs .base_margin-l-low {
+  margin-left: -200px;
 }
 .base__tabs .base_margin-r {
   margin-left: 220px;
@@ -575,8 +599,8 @@ ________________ .base {
   margin-left: 820px;
 }
 .base__tabs .base_margin-b {
-  margin-top: 300px;
-  margin-left: 240px;
+  margin-top: 250px;
+  margin-left: 700px;
 }
 .base__tabs .base_margin-small-b {
   margin-top: 80px;
@@ -892,6 +916,9 @@ ________________ .base {
   transform: rotate(0deg);
 }
 
+.project {
+  margin: 75px 0;
+}
 .project .project__wrapper {
   display: flex;
   flex-direction: column;
@@ -999,136 +1026,100 @@ ________________ .base {
     justify-content: center;
   }
 }
-.discuss {
-  /* Style the input fields */
-  /* Mark input boxes that gets an error on validation: */
-  /* Hide all steps by default: */
-  /* Make circles that indicate the steps of the form: */
-  /* Mark the active step: */
-  /* Mark the steps that are finished and valid: */
+.connect {
+  margin: 500px 0;
 }
-.discuss .discuss__body {
+.connect .connect__wrapper {
   margin-top: clamp(80px, 18vw, 280px);
   display: flex;
 }
-.discuss .discuss__left {
+.connect .connect__left {
   width: clamp(400px, 50vw, 720px);
   display: flex;
   flex-direction: column;
   gap: clamp(30px, 15vw, 298px);
 }
-.discuss .discuss__left .discuss__title {
+.connect .connect__left .connect__title {
   white-space: nowrap;
 }
-.discuss .discuss__left .discuss__info {
+.connect .connect__left .connect__info {
   color: var(--main-font);
   font-family: "Manrope", serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.1;
 }
-.discuss .discuss__right {
+.connect .connect__right {
   width: 65%;
   position: relative;
 }
-.discuss .discuss__form {
+.connect .connect__form {
   position: relative;
   z-index: 5;
-  width: clamp(300px, 50vw, 860px);
-  height: 500px;
-  background-color: #141414;
 }
-.discuss .form-discuss {
+.connect .form-connect {
   display: flex;
   position: absolute;
   right: 0;
+  width: clamp(300px, 50vw, 800px);
+  min-height: 480px;
+  background-color: #141414;
 }
-.discuss .discuss__back-img-1 {
-  position: absolute;
-  bottom: -100px;
-  right: 350px;
-  width: clamp(150px, 32vw, 634px);
-  background: radial-gradient(closest-side, rgba(184, 255, 32, 0.5019607843), transparent);
-}
-.discuss .discuss__back-img-2 {
-  position: absolute;
-  top: -100px;
-  right: -110px;
-  width: clamp(150px, 32vw, 634px);
-  background: radial-gradient(closest-side, rgba(181, 42, 232, 0.712), transparent);
-}
-.discuss .discuss-tab__container {
-  margin: 0 auto;
-  padding: 0 40px;
-  padding-top: 40px;
+.connect .connect-tab__container {
+  position: relative;
+  z-index: 3;
+  padding: 40px;
   display: flex;
+  justify-content: space-between;
   gap: 40px;
+  height: 100%;
 }
-.discuss .tab-discuss {
+.connect .tab {
   display: none;
 }
-.discuss .tab-discuss.is-active {
-  display: block;
-}
-.discuss .tab__wrapper {
+.connect .tab__wrapper {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.discuss .discuss__steps {
+.connect .connect__steps {
   display: flex;
   align-items: center;
   gap: 22px;
 }
-.discuss .discuss__step {
+.connect .connect__step {
   color: var(--contrast-color);
   font-family: "Manrope", serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
 }
-.discuss .discuss__indicate {
+.connect .connect__indicate {
   background-color: #212121;
   width: 215.333px;
   height: 8px;
   position: relative;
   border-radius: 5px;
 }
-.discuss .discuss__indicator {
+.connect .connect__indicator {
   position: absolute;
   height: 8px;
   background-color: var(--contrast-color);
   border-radius: 5px;
 }
-.discuss .discuss__indicator-1 {
-  width: 20%;
-  transform: translate();
-}
-.discuss .discuss__indicator-2 {
-  width: 40%;
-}
-.discuss .discuss__indicator-3 {
-  width: 60%;
-}
-.discuss .discuss__indicator-4 {
-  width: 80%;
-}
-.discuss .discuss__indicator-5 {
-  width: 100%;
-}
-.discuss .form-discuss__title {
+.connect .form-discuss__title {
   color: var(--main-font);
   font-family: "Manrope", serif;
   font-size: 36px;
   font-weight: 600;
   line-height: 1.1;
 }
-.discuss .form-discuss_btns {
+.connect .form-connect__variants {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
-.discuss .form-discuss_btn {
+.connect .form-connect__variant {
   font-family: "Manrope", serif;
   font-size: 24px;
   font-weight: 500;
@@ -1141,70 +1132,112 @@ ________________ .base {
   padding: 15px;
   cursor: pointer;
 }
-.discuss .discuss-nav__btns {
+.connect .connect__indicator-1 {
+  width: 20%;
+  transform: translate();
+}
+.connect .connect__indicator-2 {
+  width: 40%;
+}
+.connect .connect__indicator-3 {
+  width: 60%;
+}
+.connect .connect__indicator-4 {
+  width: 80%;
+}
+.connect .connect__indicator-5 {
+  width: 100%;
+}
+.connect .form-connect__variants--inputs {
+  gap: 15px;
+}
+.connect .form-connect__variants--inputs input {
+  width: 80%;
+  color: #606060;
+  font-family: "Manrope", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 110%;
+  padding: 16px;
+  background-color: transparent;
+  border: 1px solid var(--main-font);
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.connect .connect__btn {
+  width: 80%;
+  border-radius: 8px;
+  color: #404040;
+  font-family: "Manrope", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 110%;
+  text-transform: uppercase;
+  padding: 16px 0;
+  border: none;
+}
+.connect .navs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+}
+.connect .steps {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding-top: 49px;
+  margin-left: 50px;
 }
-.discuss .discuss-nav__btn {
-  color: #606060;
-  background: transparent;
+.connect .step {
   white-space: nowrap;
   font-family: "Manrope", serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.1;
-  cursor: pointer;
-}
-.discuss .discuss-nav__btn.is-active {
-  color: var(--main-font);
-}
-.discuss input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-}
-.discuss input.invalid {
-  background-color: #ffdddd;
-}
-.discuss .tab {
-  display: none;
-}
-.discuss .step {
-  height: 15px;
-  width: 15px;
   margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
+  color: #606060;
+  text-align: start;
 }
-.discuss .step.active {
-  opacity: 1;
+.connect .step.active {
+  color: #fff;
 }
-.discuss .step.finish {
-  background-color: #4CAF50;
+.connect .btns {
+  display: flex;
+  gap: 10px;
+}
+.connect .btn {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--contrast-color);
+  border-radius: 5px;
+}
+.connect .connect__back-img {
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.connect .connect__back-img-1 {
+  position: absolute;
+  z-index: -2;
+  bottom: -100px;
+  right: 350px;
+  width: clamp(150px, 32vw, 634px);
+  background: radial-gradient(closest-side, rgba(184, 255, 32, 0.5019607843), transparent);
+}
+.connect .connect__back-img-2 {
+  position: absolute;
+  z-index: -2;
+  top: -100px;
+  right: -110px;
+  width: clamp(150px, 32vw, 634px);
+  background: radial-gradient(closest-side, rgba(181, 42, 232, 0.712), transparent);
 }
 
-@media (max-width: 768px) {
-  .discuss__body {
-    margin-top: clamp(80px, 18vw, 280px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .discuss__form {
-    position: relative;
-    z-index: 5;
-    width: 100%;
-    height: 600px;
-    background-color: #141414;
-  }
-}
 .start {
   margin-top: clamp(200px, 35vw, 550px);
   position: relative;
@@ -1447,11 +1480,17 @@ ________________ .base {
   position: absolute;
   z-index: -2;
   top: 25%;
-  right: 0;
+  right: 10%;
   background: radial-gradient(closest-side, rgba(151, 71, 255, 0.2), transparent);
 }
+.info .info__back-text {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  z-index: -3;
+}
 .info .info__cards {
-  margin-top: 50px;
+  margin-top: 160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1473,6 +1512,9 @@ ________________ .base {
   font-weight: 600;
   line-height: 1.1;
 }
+.info .info__card-text span {
+  color: var(--contrast-color);
+}
 .info .card-info__svg--col {
   display: flex;
   flex-direction: column;
@@ -1482,6 +1524,120 @@ ________________ .base {
   margin-left: 20px;
 }
 
+.plan {
+  margin-top: 500px;
+  margin-bottom: 500px;
+  border-radius: 60px;
+  background: #1D1D1D;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: -3;
+}
+.plan .plan__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 260px;
+}
+.plan .plan__title span {
+  color: var(--contrast-color);
+}
+.plan .plan__text {
+  color: #D3D3D3;
+  font-family: "Manrope", serif;
+  font-size: clamp(18px, 2vw, 36px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.plan .plan__img {
+  max-width: 60%;
+  position: absolute;
+  z-index: -2;
+  top: 25%;
+  right: 10%;
+  background: radial-gradient(closest-side, rgba(184, 255, 32, 0.2), transparent);
+}
+.plan .plan__card-front {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.plan .plan__betw-svg {
+  position: absolute;
+  top: 13%;
+  left: 45%;
+  transform: translateX(-45%);
+}
+.plan .plan__card-back {
+  position: absolute;
+  top: 35%;
+  left: 0;
+}
+.plan .plan__card-dev {
+  position: relative;
+  max-width: 560px;
+  max-height: 297px;
+}
+.plan .plan__svg {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.plan .plan__card-text-front {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.plan .plan__card_small-title {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #727272;
+  font-family: "Manrope", serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.plan .plan__back-text {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  z-index: -3;
+}
+.plan .plan__bottom {
+  margin-top: 350px;
+}
+.plan .plan__cards {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.plan .plan__card {
+  border-radius: 15px;
+  background: #101010;
+  padding: 35px;
+  height: 354px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.plan .plan__card-text {
+  color: var(--main-font);
+  font-family: "Manrope", serif;
+  font-size: clamp(16px, 1.6vw, 24px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.plan .plan__card-text span {
+  color: var(--contrast-color);
+}
+
+.models {
+  margin: 450px 0;
+}
 .models .models__header {
   margin-bottom: 62px;
   display: flex;
@@ -1567,7 +1723,7 @@ ________________ .base {
   padding: 120px 0;
 }
 .see .see__img {
-  padding: 70px 0;
+  padding: 90px 0;
 }
 .see .see__img-back {
   position: relative;
@@ -1576,14 +1732,11 @@ ________________ .base {
 }
 .see .see__img-l {
   margin-left: -140px;
+  background-image: url(../img/back-see-rekl.png);
 }
 .see .see__img-r {
   margin-right: -120px;
-}
-.see .see__img-r .see__img-back {
-  position: relative;
-  z-index: -2;
-  margin-top: -520px;
+  background-image: url(../img/back-see-rekl-2.png);
 }
 .see .see__img-rotate .see__img-main {
   transform: rotate(180deg);

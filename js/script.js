@@ -211,63 +211,103 @@ projectTab();
 
 
 
-let mainTab = function () {
-  let mainTabNav = document.querySelectorAll('.discuss-nav__btn'),
-    mainTabContent = document.querySelectorAll('.tab-discuss'),
-    mainTabName;
 
-  mainTabNav.forEach(item => {
-    item.addEventListener('click',selectMainTabNav)
-  });
-  
-  function selectMainTabNav(){
-      mainTabNav.forEach(item => {
-        item.classList.remove('is-active');
 
-      });
-    this.classList.add('is-active');
-    mainTabName = this.getAttribute('data-tab-name');
-    selectMainTabContent(mainTabName);
-  };
 
-  function selectMainTabContent(mainTabName) {
-    mainTabContent.forEach(item => {
-      item.classList.contains(mainTabName)? item.classList.add('is-active'): item.classList.remove('is-active');
-    });
 
-    mainTabContent.forEach(item => {
-      item.style.animation = 'fadein 0.5s ease-in-out';
-    });
+
+
+
+
+
+
+
+
+
+
+
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+    if (n == 0) {
+        document.getElementById("prevBtn").style.opacity = "0.5";
+        document.getElementById("prevBtn").disabled = true;
+
+    } else {
+        document.getElementById("prevBtn").style.opacity = "1";
+        document.getElementById("prevBtn").disabled = false;
+    }
+//   if (n == (x.length - 1)) {
+//     document.getElementById("nextBtn").innerHTML = "Submit";
+//   } else {
+//     document.getElementById("nextBtn").innerHTML = "Next";
+//   }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+
+
+
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
   }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
 
-};
-mainTab();
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
 
 
 
 
-
-// const swiper = new Swiper('.swiper', {
-//   // Optional parameters
-//   direction: 'vertical',
-//   loop: true,
-
-//   // If we need pagination
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-// });
 
 
 
@@ -288,8 +328,11 @@ const swiperProducts = new Swiper('.products__body', {
 },
   scrollbar: {
     el: '.swiper-scrollbar',
+
+    draggable: true,
   },
 });
+
 
 
 const swiperTeam = new Swiper('.team__body', {
@@ -313,86 +356,3 @@ const swiperTeam = new Swiper('.team__body', {
   //   el: '.swiper-scrollbar',
   // },
 });
-
-
-
-
-
-
-
-
-
-
-
-// var currentTab = 0; // Current tab is set to be the first tab (0)
-// showTab(currentTab); // Display the current tab
-
-// function showTab(n) {
-//   // This function will display the specified tab of the form ...
-//   var x = document.getElementsByClassName("tab");
-//   x[n].style.display = "block";
-//   // ... and fix the Previous/Next buttons:
-//   if (n == 0) {
-//     document.getElementById("prevBtn").style.display = "none";
-//   } else {
-//     document.getElementById("prevBtn").style.display = "inline";
-//   }
-//   if (n == (x.length - 1)) {
-//     document.getElementById("nextBtn").innerHTML = "Submit";
-//   } else {
-//     document.getElementById("nextBtn").innerHTML = "Next";
-//   }
-//   // ... and run a function that displays the correct step indicator:
-//   fixStepIndicator(n)
-// }
-
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab-discuss");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
-    //...the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
-
-// function validateForm() {
-//   // This function deals with validation of the form fields
-//   var x, y, i, valid = true;
-//   x = document.getElementsByClassName("tab");
-//   y = x[currentTab].getElementsByTagName("input");
-//   // A loop that checks every input field in the current tab:
-//   for (i = 0; i < y.length; i++) {
-//     // If a field is empty...
-//     if (y[i].value == "") {
-//       // add an "invalid" class to the field:
-//       y[i].className += " invalid";
-//       // and set the current valid status to false:
-//       valid = false;
-//     }
-//   }
-//   // If the valid status is true, mark the step as finished and valid:
-//   if (valid) {
-//     document.getElementsByClassName("step")[currentTab].className += " finish";
-//   }
-//   return valid; // return the valid status
-// }
-
-// function fixStepIndicator(n) {
-//   // This function removes the "active" class of all steps...
-//   var i, x = document.getElementsByClassName("step");
-//   for (i = 0; i < x.length; i++) {
-//     x[i].className = x[i].className.replace(" active", "");
-//   }
-//   //... and adds the "active" class to the current step:
-//   x[n].className += " active";
-// }

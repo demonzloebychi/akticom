@@ -504,6 +504,7 @@ body.lock{
 }
 
 @media (max-width:925px) {
+   
     .menu__list {
         display: flex;
         flex-direction: column;
@@ -533,6 +534,15 @@ body.lock{
        padding: 10px 20px;
     
     }
+
+
+}
+@media (max-width:500px) {
+    .menu.active {
+        display: flex;
+        top: 70px;
+    }
+  
 
 
 }

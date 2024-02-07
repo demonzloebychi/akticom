@@ -493,6 +493,12 @@ body.lock {
     padding: 10px 20px;
   }
 }
+@media (max-width: 500px) {
+  .menu.active {
+    display: flex;
+    top: 70px;
+  }
+}
 ________________ .base {
   position: relative;
 }

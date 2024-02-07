@@ -365,9 +365,9 @@ body.lock {
   content: " ";
   background: rgba(255, 255, 255, 0.2);
   width: 1px;
-  height: 500px;
+  height: 100%;
   top: 0;
-  right: -20%;
+  right: -10%;
   position: absolute;
 }
 
@@ -400,9 +400,9 @@ body.lock {
   content: " ";
   background: rgba(255, 255, 255, 0.2);
   width: 1px;
-  height: 500px;
+  height: 100%;
   top: 0;
-  right: -20%;
+  right: -10%;
   position: absolute;
 }
 
@@ -962,6 +962,7 @@ ________________ .base {
   -o-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  transition: all 0.5s ease 0s;
 }
 .tasks .accordion__title svg {
   position: absolute;
@@ -991,6 +992,12 @@ ________________ .base {
   line-height: 1.4;
   margin-right: clamp(20px, 2vw, 60px);
 }
+.tasks .accordion-item.active {
+  background-image: url(../img/svg/image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s ease 0s;
+}
 .tasks .accordion-item.active .accordion__text {
   grid-template-rows: 1fr;
   height: 100%;
@@ -1001,6 +1008,7 @@ ________________ .base {
   position: absolute;
   right: 0;
   top: 40px;
+  margin-right: 10px;
 }
 .tasks .arrow {
   display: block;
@@ -1049,6 +1057,9 @@ ________________ .base {
 }
 
 @media (max-width: 768px) {
+  .tasks svg {
+    margin-bottom: 0px;
+  }
   .tasks .accordion-item {
     display: grid;
     gap: 15px;
@@ -1437,6 +1448,29 @@ ________________ .base {
     flex-direction: row;
     align-items: center;
     height: 100%;
+    margin-top: -40px;
+  }
+  .connect .steps {
+    margin-left: 0px;
+  }
+  .connect .connect__left {
+    gap: 20px;
+  }
+  .connect__back-img {
+    display: none;
+  }
+}
+@media (max-width: 475px) {
+  .connect .form-connect__variant {
+    font-size: 16px;
+  }
+  .connect .btn {
+    width: 40px;
+    height: 40px;
+  }
+  .connect .connect__steps {
+    flex-direction: column;
+    align-items: start;
   }
 }
 .start {
@@ -2200,4 +2234,17 @@ ________________ .base {
   font-size: clamp(14px, 1.3vw, 18px);
   font-weight: 600;
   line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .footer .footer__wrapper {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  .footer .footer__list {
+    flex-wrap: wrap;
+  }
+  .footer .footer__phone {
+    flex-wrap: wrap;
+  }
 }/*# sourceMappingURL=style.css.map */

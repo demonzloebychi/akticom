@@ -176,6 +176,7 @@ body{
     color: var(--main-font);
     overflow-x: hidden;
     max-width: 100%;
+    -webkit-text-size-adjust: none;
 }
 
 @mixin background-text {

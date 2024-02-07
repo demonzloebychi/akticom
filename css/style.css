@@ -752,6 +752,9 @@ ________________ .base {
 }
 
 @media (max-width: 768px) {
+  .background-image-pink {
+    display: none;
+  }
   .base__tabs {
     flex-direction: column;
   }

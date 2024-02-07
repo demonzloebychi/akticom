@@ -474,16 +474,16 @@ body.lock {
   }
   .sub-menu__list.open {
     position: relative;
-    left: 7%;
-    top: 0;
+    left: 15px;
+    top: 10px;
   }
   .sub-menu__list.open::after {
     display: none;
   }
   .sub-sub-menu__list.open {
     position: relative;
-    left: 7%;
-    top: 0;
+    left: 15px;
+    top: 10px;
   }
   .bottom-menu__list {
     flex-direction: column;

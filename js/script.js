@@ -84,6 +84,7 @@ const menu = document.querySelector('.menu');
 const main = document.querySelector('.main');
 const footer = document.querySelector('.footer');
 const header = document.querySelector('.header');
+const menus = document.querySelector('.menus');
 
 if (burgerIcon){
   burgerIcon.addEventListener("click", function(e){
@@ -93,6 +94,7 @@ if (burgerIcon){
       main.classList.toggle('active');
       footer.classList.toggle('active');
       header.classList.toggle('active');
+      menus.classList.toggle('active');
   });
 } 
 

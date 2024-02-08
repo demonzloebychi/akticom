@@ -320,7 +320,7 @@ const swiperProducts = new Swiper('.products__body', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  spaceBetween: 40,
+  // spaceBetween: 0,
   breakpoints: {
     870: { slidesPerView: 1.8, },
 
@@ -344,7 +344,7 @@ const swiperTeam = new Swiper('.team__body', {
     nextEl: '.team-next',
     prevEl: '.team-prev',
   },
-  spaceBetween: 20,
+  // spaceBetween: 0,
   breakpoints: {
     485: { slidesPerView: 1.8, },
 

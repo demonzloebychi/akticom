@@ -504,7 +504,14 @@ body.lock{
 }
 
 @media (max-width:925px) {
-   
+    .menu.active::-webkit-scrollbar {
+        width: 0;
+    }
+    .menu.active{
+        -ms-overflow-style: none;  /* IE и Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
     .menu__list {
         display: flex;
         flex-direction: column;
@@ -531,10 +538,8 @@ body.lock{
         align-items: start;
     }
     .bottom-menu__btn {
-       padding: 10px 20px;
-    
+        padding: 10px 20px;
     }
-
 
 }
 @media (max-width:500px) {
@@ -707,16 +712,14 @@ ________________
         gap: 33px;
     }
 
-    .base_margin-l{
-        margin-top: -50px;
-        margin-left: -320px;
-    }
+   
+    
     .base_margin-l-low{
         margin-left: -200px;
     }
-    .base_margin-r{
-        margin-left: 220px;
-    }
+    // .base_margin-r{
+    //     margin-left: 220px;
+    // }
     .base_margin-big-r{
         margin-top: -60px;
         margin-left: 820px;
@@ -726,11 +729,9 @@ ________________
         margin-top: 80px;
         margin-left: 240px;
     }
-    .base_margin-i{
-        position: absolute;
-        bottom: -30px;
-        right: -290px;
-    }
+  
+
+
     .item-tabs-base__img-back {
         position: relative;
     }
@@ -1712,7 +1713,7 @@ ________________
 
 
 .start {
-    margin-top: clamp(200px, 35vw, 550px);
+    margin-top: clamp(200px, 35vw, 600px);
     position: relative;
     .start__body {
         display: flex;
@@ -1771,13 +1772,23 @@ ________________
         max-width: 55%;
         z-index: -1;
         position: absolute;
-        top: -32%;
+        top: -56%;
         right: -5%;
-        background: no-repeat  url('../img/start-back.png');
-        background-position: 50% 50%;
-        background-size: 80%;
+
         img{
             max-width: 100%;
+            position: relative;
+            z-index: 2;
+            background: no-repeat  url('../img/start-back.png');
+            background-position: 50% 50%;
+            background-size: contain;
+        }
+        :nth-child(2){
+            position: relative;
+            z-index: 1;
+            // max-width: 80%;
+            margin-top: -900px;
+            margin-left: 200px;
         }
     }
 }
@@ -1787,7 +1798,7 @@ ________________
 
 
 .products {
-    margin-top: 500px;
+    margin: 175px 0;
     .products__body {
         position: relative;
 
@@ -1806,7 +1817,7 @@ ________________
         display: flex;
         gap: 20px;
         top: 120px;
-        right: 180px;
+        right: 230px;
         position: absolute;
     }
     .swiper-button-prev{
@@ -1861,6 +1872,7 @@ ________________
         font-size: 32px;
         font-weight: 500;
         line-height: 1.1;
+        white-space: nowrap;
     }
     .card-products__line{
         margin-top: 20px;
@@ -1881,8 +1893,7 @@ ________________
         height: 800px;
         padding-top: 100px;
     }
-    .container {
-    }
+    
     .team__header {
         @include header-line;
         margin-bottom: 62px;
@@ -1894,7 +1905,7 @@ ________________
         display: flex;
         gap: 20px;
         top: 120px;
-        right: 180px;
+        right: 12%;
         position: absolute;
     }
     .swiper-button-prev {
@@ -1917,8 +1928,9 @@ ________________
         display: flex;
         flex-direction: column;
         gap: 10px;
+
     }
-    .card-team__img {
+    .card-team__img{
         max-width: 100%;
     }
     .card-team__name {
@@ -2106,8 +2118,8 @@ ________________
 
 
 .plan{
-    margin-top: 500px;
-    margin-bottom: 500px;
+    margin-top: 190px;
+    margin-bottom: 175px;
     border-radius: 60px;
     background: #1D1D1D;
     padding-top: 100px;
@@ -2136,8 +2148,8 @@ ________________
         max-width: 60%;
         position: absolute;
         z-index: -2;
-        top: 25%;
-        right: 10%;
+        top: 20%;
+        right: 0;
         background: radial-gradient(closest-side, rgba(184, 255, 32, 0.20), transparent);
         
     }
@@ -2229,7 +2241,7 @@ ________________
     .plan__card-text {
         color: var(--main-font);
         font-family: 'Manrope',serif;
-        font-size: clamp(16px, 1.6vw, 24px);
+        font-size: clamp(16px, 1.6vw, 36px);
         font-weight: 600;
         line-height: 1.1;
     }
@@ -2249,7 +2261,7 @@ ________________
 
 
 .models {
-    margin: 450px 0;
+    margin: 175px 0;
     .models__body {
     }
     .models__header {
@@ -2424,6 +2436,12 @@ ________________
         width: 100%;
         height: 250px;
         position: relative;
+        svg:nth-child(1){
+            filter: blur(4px);
+
+        }
+        
+        
     }
 
     .body-spec__title-svg{
@@ -2502,7 +2520,7 @@ ________________
     }
     .item-spec-7{
         bottom: -3%;
-        left: 57%;
+        left: 71%;
     }
 
     .item-spec__point-1{

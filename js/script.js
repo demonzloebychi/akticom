@@ -334,7 +334,9 @@ const swiperProducts = new Swiper('.products__body', {
   },
   spaceBetween: 40,
   breakpoints: {
-    485: { slidesPerView: 1.4, },
+    320: { slidesPerView: 1.1 },
+
+    485: { slidesPerView: 1.4 },
 
     740: { slidesPerView: 1.9, },
 

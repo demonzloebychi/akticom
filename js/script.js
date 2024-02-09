@@ -336,7 +336,7 @@ const swiperProducts = new Swiper('.products__body', {
   breakpoints: {
     320: { slidesPerView: 1.1 },
 
-    485: { slidesPerView: 1.4 },
+    485: { slidesPerView: 1.6 },
 
     740: { slidesPerView: 1.9, },
 
@@ -362,6 +362,8 @@ const swiperTeam = new Swiper('.team__body', {
   },
   spaceBetween: 40,
   breakpoints: {
+    320: { slidesPerView: 1.1 },
+
     485: { slidesPerView: 1.8, },
 
     740: { slidesPerView: 3.4, },

@@ -32,16 +32,6 @@ const defImage = document.querySelector('.defaul-image');
 
 
 
-// document.addEventListener( 'DOMContentLoaded', function() {
-//   var splide = new Splide( '.splide' , {
-//     type: 'loop',
-//     perPage: 2.7,
-//     // rewindByDrag: boolean,
-//   } );
-//   splide.mount();
-// } );
-
-// new Splide( '.splide' ).mount();
 
 
 
@@ -175,6 +165,7 @@ function openTab(event, id){
     content[i].style.animation = 'fadein 0.5s ease-in-out';
   }
 
+
   btn = document.getElementsByClassName('nav-tabs-base__item');
   for(i=0; i<btn.length; i++){
     btn[i].className = btn[i].className.replace(' is-active','');
@@ -195,7 +186,7 @@ function openTab(event, id){
 
 let projectTab = function () {
   let projectTabNav = document.querySelectorAll('.nav-project__item'),
-    projectTabContent = document.querySelectorAll('.slider-list'),
+    projectTabContent = document.querySelectorAll('.project__body'),
     projectTabName;
 
   projectTabNav.forEach(item => {

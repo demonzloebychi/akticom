@@ -406,7 +406,7 @@ body.lock{
     content: " ";
     background: rgba(255, 255, 255, 0.2);
     width: 1px;
-    height: 100%;
+    height: clamp(18vh, 28vw, 36vh);
     top: 0;
     right: -10%;
     position: absolute;
@@ -441,7 +441,7 @@ body.lock{
     content: " ";
     background: rgba(255, 255, 255, 0.2);
     width: 1px;
-    height: 100%;
+    height: clamp(18vh, 28vw, 36vh);
     top: 0;
     right: -10%;
     position: absolute;
@@ -2052,6 +2052,13 @@ ________________
         justify-content: space-between;
     }
 
+
+    .info__header{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
     .info__title {
         white-space: nowrap;
         span{
@@ -2174,6 +2181,31 @@ ________________
     }
 }
 
+.info-reklama{
+    margin-top: 500px;
+}
+
+@media (max-width:768px) {
+    .info .info__cards {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .info .info__img p{
+        display: none;
+    }
+    .info .info__img {
+        max-width: 80%;
+        position: absolute;
+        z-index: -2;
+        top: 15%;
+        right: 10%;
+        background: radial-gradient(closest-side, rgba(151, 71, 255, 0.2), transparent);
+    }
+    .info .card-info {
+        height: 300px;
+    }
+
+}
 
 
 
@@ -2543,11 +2575,16 @@ ________________
     .see__img-l{
         margin-left: -140px;
         background-image: url(../img/back-see-rekl.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center
     }
     .see__img-r{
         margin-right: -120px;
         background-image: url(../img/back-see-rekl-2.png);
-
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center
     }
 
     .see__img-rotate .see__img-main {
@@ -2565,7 +2602,7 @@ ________________
         color: #DBDBDB;
         text-align: center;
         font-family: 'Geologica', serif;
-        font-size: 40px;
+        font-size: clamp(14px, 3vw, 40px);
         font-weight: 400;
         line-height: 130%;
         text-transform: uppercase;

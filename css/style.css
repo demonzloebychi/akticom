@@ -1635,7 +1635,7 @@ ________________ .base {
 }
 .products .swiper {
   width: 100%;
-  height: 700px;
+  height: 780px;
   padding-top: 100px;
 }
 .products .products__btns {
@@ -1680,13 +1680,13 @@ ________________ .base {
 .products .card-products__num {
   color: var(--contrast-color);
   font-family: "Geologica", serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 1.1;
   text-transform: uppercase;
 }
 .products .card-products__name {
-  color: #FFF;
+  color: var(--main-font);
   font-family: "Manrope", serif;
   font-size: clamp(24px, 1.8vw, 32px);
   font-weight: 500;
@@ -1700,6 +1700,18 @@ ________________ .base {
   background-color: var(--contrast-color);
 }
 
+@media (max-width: 930px) {
+  .products .products__btns {
+    left: 0;
+    bottom: -530px;
+  }
+  .products .card-products__name {
+    white-space: wrap;
+  }
+  .products {
+    margin: 125px 0;
+  }
+}
 .team {
   margin: 200px 0;
 }
@@ -1723,7 +1735,7 @@ ________________ .base {
   display: flex;
   gap: 20px;
   top: 120px;
-  right: 12%;
+  right: 230px;
   position: absolute;
 }
 .team .square__btn {
@@ -1767,6 +1779,12 @@ ________________ .base {
   letter-spacing: -0.72px;
 }
 
+@media (max-width: 930px) {
+  .team .team__btns {
+    left: 0;
+    bottom: -510px;
+  }
+}
 .info {
   margin: 175px 0;
   border-radius: 60px;
@@ -1948,6 +1966,9 @@ ________________ .base {
   left: 45%;
   transform: translateX(-45%);
 }
+.plan .plan__betw-svg svg {
+  width: clamp(350px, 38vw, 705px);
+}
 .plan .plan__card-back {
   position: absolute;
   top: 35%;
@@ -1956,7 +1977,11 @@ ________________ .base {
 .plan .plan__card-dev {
   position: relative;
   max-width: 560px;
-  max-height: 297px;
+  height: 297px;
+}
+.plan .plan__card-dev-header {
+  display: flex;
+  justify-content: space-between;
 }
 .plan .plan__svg {
   position: absolute;
@@ -2014,6 +2039,61 @@ ________________ .base {
   color: var(--contrast-color);
 }
 
+@media (max-width: 1700px) {
+  .plan .plan__img {
+    opacity: 0.6;
+  }
+  .plan .plan__card-front {
+    position: absolute;
+    top: 5%;
+    right: 0;
+  }
+  .plan__betw-svg {
+    position: absolute;
+    top: 13%;
+    left: 45%;
+    transform: translateX(-45%);
+    display: none;
+  }
+  .plan__betw-svg svg {
+    width: clamp(350px, 38vw, 705px);
+  }
+  .plan__card-back {
+    position: absolute;
+    top: 35%;
+    left: 0;
+  }
+}
+@media (max-width: 620px) {
+  .plan .plan__img {
+    opacity: 0.6;
+    display: none;
+  }
+  .plan .plan__bottom {
+    margin-top: 20px;
+  }
+  .plan__betw-svg {
+    display: none;
+  }
+  .plan .plan__svg svg {
+    width: 70px;
+  }
+  .plan .plan__card-front {
+    position: static;
+  }
+  .plan .plan__card-back {
+    position: static;
+  }
+  .plan .plan__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .plan .plan__cards {
+    flex-direction: column;
+  }
+}
 .models {
   margin: 175px 0;
 }
@@ -2227,7 +2307,7 @@ ________________ .base {
 .spec .item-spec__title {
   color: #101010;
   font-family: "Geologica", serif;
-  font-size: 28px;
+  font-size: clamp(16px, 2vw, 28px);
   font-weight: 400;
   line-height: 110%;
 }
@@ -2291,6 +2371,90 @@ ________________ .base {
   top: -40%;
 }
 
+@media (max-width: 1400px) {
+  .spec .item-spec-2 {
+    top: -60%;
+    left: 40%;
+  }
+  .spec .item-spec-4 {
+    top: 0;
+    left: 70%;
+  }
+  .spec .item-spec-6 {
+    bottom: -56%;
+    left: 31%;
+  }
+  .spec .item-spec-7 {
+    bottom: -3%;
+    left: 65%;
+  }
+}
+@media (max-width: 900px) {
+  .spec .item-spec-1 {
+    top: 35%;
+    left: 2%;
+  }
+  .spec .item-spec-3 {
+    top: -27%;
+    left: 22%;
+  }
+  .spec .item-spec-4 {
+    top: 0;
+    left: 60%;
+  }
+  .spec .item-spec-7 {
+    bottom: 13%;
+    left: 55%;
+  }
+}
+@media (max-width: 480px) {
+  .spec .body-spec__title-back {
+    margin-bottom: -90px;
+  }
+  .spec .item-spec__point {
+    display: none;
+  }
+  .spec .spec__body {
+    margin-top: 0px;
+  }
+  .spec .item-spec {
+    position: relative;
+    width: 275px;
+  }
+  .spec .body-spec {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .spec .item-spec-1 {
+    top: 0;
+    left: 10%;
+  }
+  .spec .item-spec-2 {
+    top: 0;
+    left: 10%;
+  }
+  .spec .item-spec-3 {
+    top: 0;
+    left: 10%;
+  }
+  .spec .item-spec-4 {
+    top: 0;
+    left: 10%;
+  }
+  .spec .item-spec-5 {
+    top: 0;
+    left: 10%;
+  }
+  .spec .item-spec-6 {
+    top: 0;
+    left: 10%;
+  }
+  .spec .item-spec-7 {
+    top: 0;
+    left: 10%;
+  }
+}
 .footer {
   margin-top: 100px;
   padding: clamp(30px, 3vw, 50px);

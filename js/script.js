@@ -195,7 +195,7 @@ function openTab(event, id){
 
 let projectTab = function () {
   let projectTabNav = document.querySelectorAll('.nav-project__item'),
-    projectTabContent = document.querySelectorAll('.project__body'),
+    projectTabContent = document.querySelectorAll('.slider-list'),
     projectTabName;
 
   projectTabNav.forEach(item => {

@@ -638,7 +638,7 @@ ________________ .base {
 }
 .base__tabs .item-tabs-base__support-text {
   color: #FFF;
-  font-family: "Manrope", serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(16px, 2vw, 32px);
   font-weight: 400;
   line-height: 1.5;
@@ -904,8 +904,10 @@ ________________ .base {
     left: -35%;
     top: 10%;
     max-width: none;
+    overflow: hidden;
   }
   .base__tabs .item-tabs-base__img--main-2 {
+    overflow: hidden;
     position: absolute;
     width: 320px;
     height: 440px;

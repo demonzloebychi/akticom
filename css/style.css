@@ -658,6 +658,9 @@ ________________ .base {
   z-index: 0;
   max-width: 100%;
 }
+.base__tabs .background-image-pink-mobile {
+  display: none;
+}
 .base__tabs .item-tabs-base__img {
   display: none;
   position: absolute;
@@ -776,8 +779,10 @@ ________________ .base {
   cursor: pointer;
   transform: translate(0px, 0px);
 }
-.nav-tabs-base .nav-tabs-base__item:hover {
-  background-color: rgba(91, 18, 185, 0.5019607843);
+@media (hover: hover) {
+  .nav-tabs-base .nav-tabs-base__item:hover {
+    background-color: rgba(91, 18, 185, 0.5019607843);
+  }
 }
 .nav-tabs-base .nav-tabs-base__img div {
   margin-top: -2%;
@@ -828,12 +833,15 @@ ________________ .base {
     display: none;
   }
   .base__tabs .background-image-pink {
+    display: none;
+  }
+  .base__tabs .background-image-pink-mobile {
+    display: block;
     position: absolute;
-    right: -50%;
-    top: -10%;
+    right: 0;
+    top: 0;
     z-index: 0;
     max-width: 100%;
-    transform: rotate(-100deg);
   }
   .base__tabs {
     flex-direction: column;
@@ -907,9 +915,6 @@ ________________ .base {
   }
   .base-btn--main {
     margin-top: 440px;
-  }
-  .base__tabs .background-image-pink {
-    right: -60%;
   }
 }
 .year {

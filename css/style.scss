@@ -938,25 +938,57 @@ ________________
         display: none;
 
     }
-    .background-image-pink{
-       display: none;
+    .base__tabs .background-image-pink {
+        position: absolute;
+        right: -50%;
+        top: -10%;
+        z-index: 0;
+        max-width: 100%; 
+        transform: rotate(-100deg);
     }
+
    
     .base__tabs{
         flex-direction: column;
     }
     .nav-tabs-base__img svg{
-        max-width: 90%;
+        max-width: 60%;
         
     }
     
     .nav-tabs-base{
         margin-top: 200px;
-        flex-direction: row;
-        gap: 10px;
+        border-top: none;
+        gap: 0px;
     }
+
+    .base__tabs .item-tabs-base__btns {
+        display: none;
+    }
+    .base__tabs .item-tabs-base__main-text {
+        margin-top: clamp(140px, 20vw, 220px);
+    }
+ 
+    .nav-tabs-base .nav-tabs-base__item {
+        width: 100%;
+        flex-direction: row-reverse;
+        align-items: center;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid var(--main-font);
+        height: 50px;
+        border-top: none;
+        padding: 0;
+        backdrop-filter: none;
+    }
+    .nav-tabs-base .nav-tabs-base__btn {
+        display: none;
+    }
+
+
     .base-btn{
-        margin-top: clamp(240px, 43vw, 310px);
+        margin-top: 320px;
         padding-top: clamp(40px, 3vw, 60px);
         padding-bottom: clamp(40px, 3vw, 60px);
         width: 90%;
@@ -968,7 +1000,37 @@ ________________
         gap: 10px;
     }
     .nav-tabs-base .nav-tabs-base__text {
-        font-size: clamp(10px, 3vw, 16px);
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width:450px) {
+    .base__tabs .item-tabs-base__main-text--main {
+        margin-top: 330px;
+    }
+
+    .base__tabs .item-tabs-base__img--main{
+        position: absolute;
+        width: 690px;
+        height: 440px;
+        left: -35%;
+        top: 10%;
+        max-width: none;
+    }
+    .base__tabs .item-tabs-base__img--main-2{
+        position: absolute;
+        width: 320px;
+        height: 440px;
+        left: 0;
+        top: 7%;
+        max-width: none;
+    }
+    .base-btn--main {
+        margin-top: 440px;
+    }
+    .base__tabs .background-image-pink {
+        right: -60%;
     }
 }
 
@@ -997,7 +1059,7 @@ ________________
             display: flex;
             gap: 30px;
             .year__text {
-               -webkit-text-stroke: 3px #757575;
+               -webkit-text-stroke: 2px #757575;
                 writing-mode: vertical-lr;
                 white-space: nowrap;
                 
@@ -1047,7 +1109,7 @@ ________________
             .year__img {
 
                 width: clamp(300px, 50vw, 100%);
-                // background: radial-gradient(closest-side, #B62AE890, transparent);
+                background: radial-gradient(closest-side, #B62AE890, transparent);
             }
             .year__img--design{
                 margin-left: -50%;
@@ -1109,6 +1171,9 @@ ________________
     .year__body {
         flex-direction: column;
         
+    }
+    .year .year__body .year__left .year__text {
+        -webkit-text-stroke: 1px #757575;
     }
     .year__right{
         opacity: 0.7;
@@ -1433,8 +1498,8 @@ ________________
     .project__header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-
+        align-items: stretch;
+        gap: 10px;
     }
     .project__title {
     }
@@ -1550,8 +1615,12 @@ ________________
     }
 
     .project .nav-project__item {
-        font-size: 16px;
+        font-size: 12px;
 
+    }
+    .project .nav-project {
+        gap: 10px;
+        justify-content: stretch;
     }
 }
 
@@ -1656,7 +1725,7 @@ ________________
     .form-discuss__title {
         color: var(--main-font);
         font-family: 'Manrope', serif;
-        font-size: 36px;
+        font-size: clamp(20px, 3vw, 36px);
         font-weight: 600;
         line-height: 1.1;
     }
@@ -1795,7 +1864,7 @@ ________________
         z-index: -2;
         bottom: -100px;
         right: 350px;
-        width: clamp(150px, 34vw, 654px);
+        width: clamp(250px, 34vw, 654px);
         background: radial-gradient(closest-side, #b8ff2080, transparent);
     }
     .connect__back-img-2 {
@@ -1803,7 +1872,7 @@ ________________
         z-index: -2;
         top: -100px;
         right: -110px;
-        width: clamp(150px, 34vw, 654px);
+        width: clamp(250px, 34vw, 654px);
         background: radial-gradient(closest-side, rgba(181, 42, 232, 0.712), transparent);
 
     }
@@ -1840,7 +1909,7 @@ ________________
         z-index: -2;
         bottom: -350px;
         right: 350px;
-        width: clamp(150px, 34vw, 654px);
+        width: clamp(250px, 34vw, 654px);
         background: radial-gradient(closest-side, rgba(184, 255, 32, 0.5019607843), transparent);
     }
     .connect .connect__back-img-2 {
@@ -1848,7 +1917,7 @@ ________________
         z-index: -2;
         top: 300px;
         right: -110px;
-        width: clamp(150px, 34vw, 654px);
+        width: clamp(250px, 34vw, 654px);
         background: radial-gradient(closest-side, rgba(181, 42, 232, 0.712), transparent);
     }
 }
@@ -1869,13 +1938,48 @@ ________________
     .connect .connect__left {
         gap: 20px;
     }
-    .connect__back-img{
-        display: none;
+
+    .connect .connect__back-img-1 {
+        position: absolute;
+        z-index: -2;
+        bottom: -850px;
+        left: -80px;
+        width: 500px;
+        height: 500px;
+        background-image: url(/img/svg/green-circle.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .connect .connect__back-img-1 img {
+        width: 350px;
+
+    }
+    .connect .connect__back-img-2 {
+        position: absolute;
+        z-index: -2;
+        top: 100px;
+        right: -230px;
+        width: 500px;
+        height: 500px;
+        background-image: url(/img/svg/fiol-circle.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .connect .connect__back-img-2 img {
+        width: 350px;
+
+    }
+    .connect .connect-tab__container {
+        padding: 30px 15px;
     }
 }
+
 @media (max-width:475px) {
+    .connect .connect__info{
+        display: none;
+    }
     .connect .form-connect__variant {
-        font-size: 16px;
+        font-size: 14px;
     }
     .connect .btn {
         width: 40px;
@@ -1886,6 +1990,9 @@ ________________
         align-items: start;
     }
 }
+
+
+
 
 
 

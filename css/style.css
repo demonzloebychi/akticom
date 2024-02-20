@@ -672,6 +672,12 @@ ________________ .base {
 .base__tabs .item-tabs-base__img.is-active {
   display: block;
 }
+.base__tabs .def-main-1 {
+  display: block;
+}
+.base__tabs .def-main-2 {
+  display: none;
+}
 .base__tabs .item-tabs-base__img {
   animation: fadein 0.5s ease-in-out;
 }
@@ -705,14 +711,6 @@ ________________ .base {
   display: flex;
   flex-direction: column;
   gap: 33px;
-}
-.base__tabs .base_margin-big-r {
-  margin-top: -60px;
-  margin-left: 820px;
-}
-.base__tabs .base_margin-small-b {
-  margin-top: 80px;
-  margin-left: 240px;
 }
 .base__tabs .item-tabs-base__img-back {
   position: relative;
@@ -897,16 +895,13 @@ ________________ .base {
   .base__tabs .item-tabs-base__main-text--main {
     margin-top: 330px;
   }
-  .base__tabs .item-tabs-base__img--main {
-    overflow: hidden;
-    position: absolute;
-    width: 690px;
-    height: 440px;
-    left: -35%;
-    top: 10%;
-    max-width: 200%;
+  .base__tabs .def-main-1 {
+    display: none;
   }
-  .base__tabs .item-tabs-base__img--main-2 {
+  .base__tabs .def-main-2 {
+    display: block;
+  }
+  .base__tabs .item-tabs-base__img--main {
     overflow: hidden;
     position: absolute;
     width: 320px;

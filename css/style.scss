@@ -1020,17 +1020,14 @@ ________________
     }
 
     .base__tabs .item-tabs-base__img--main{
+        overflow: hidden;
         position: absolute;
         width: 690px;
         height: 440px;
         left: -35%;
         top: 10%;
-        max-width: none;
-        overflow: hidden;
+        max-width: 200%;
     }
-    // .base__tabs .item-tabs-base__img--main img{
-    //     overflow: hidden;
-    // }
     .base__tabs .item-tabs-base__img--main-2{
         overflow: hidden;
         position: absolute;
@@ -1043,9 +1040,6 @@ ________________
     .base-btn--main {
         margin-top: 440px;
     }
-    // .base__tabs .background-image-pink {
-    //     right: -60%;
-    // }
 }
 
 

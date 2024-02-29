@@ -327,13 +327,13 @@ const swiperProducts = new Swiper('.products__body', {
   breakpoints: {
     320: { slidesPerView: 1.1 },
 
-    485: { slidesPerView: 1.6 },
+    485: { slidesPerView: 1.65 },
 
-    740: { slidesPerView: 1.9, },
+    740: { slidesPerView: 1.95, },
 
-    1100: {slidesPerView: 2.9, },
+    1100: {slidesPerView: 2.95 },
 
-    1620: { slidesPerView: 3.9,},
+    1620: { slidesPerView: 3.95},
 },
   scrollbar: {
     el: '.swiper-scrollbar',
@@ -365,5 +365,6 @@ const swiperTeam = new Swiper('.team__body', {
 },
   scrollbar: {
     el: '.swiper-scrollbar',
+    draggable: true,
   },
 });

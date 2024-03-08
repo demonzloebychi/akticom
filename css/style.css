@@ -227,6 +227,15 @@ body {
   color: var(--contrast-color);
 }
 
+.title-h1 {
+  color: var(--main-font);
+  font-family: "Geologica", sans-serif;
+  font-weight: 600;
+  font-size: clamp(34px, 8vw, 96px);
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
 .title-h2 {
   color: var(--main-font);
   font-family: "Geologica", sans-serif;
@@ -243,6 +252,14 @@ body {
   font-weight: 400;
   line-height: 1.1;
   text-transform: uppercase;
+}
+
+.text {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 120%;
+  color: var(--main-font);
 }
 
 .green-btn {
@@ -1147,13 +1164,13 @@ ________________ .base {
   background-size: cover;
   background-position: center;
 }
-.analitics .analitics__list {
+.analitics__list {
   display: flex;
   flex-direction: column;
   margin-top: 13px;
   width: clamp(290px, 60vw, 1000px);
 }
-.analitics .analitics-item {
+.analitics__list .analitics-item {
   display: flex;
   align-items: center;
   justify-content: stretch;
@@ -1161,14 +1178,14 @@ ________________ .base {
   padding-block: clamp(20px, 4vw, 40px);
   border-bottom: 1px solid rgb(161, 161, 161);
 }
-.analitics .analitics-item__num {
+.analitics__list .analitics-item__num {
   color: var(--contrast-color);
   font-family: "Geologica", sans-serif;
   font-size: clamp(14px, 2vw, 24px);
   font-weight: 500;
   line-height: 110%;
 }
-.analitics .analitics-item__title {
+.analitics__list .analitics-item__title {
   color: var(--main-font);
   font-family: "Manrope", sans-serif;
   font-size: clamp(16px, 2vw, 24px);
@@ -1177,7 +1194,7 @@ ________________ .base {
   width: clamp(150px, 30vw, 400px);
   margin-left: clamp(20px, 4vw, 50px);
 }
-.analitics .analitics-item__text {
+.analitics__list .analitics-item__text {
   color: rgb(226, 226, 226);
   font-family: "Manrope", sans-serif;
   font-size: clamp(12px, 1.4vw, 16px);
@@ -1185,7 +1202,7 @@ ________________ .base {
   line-height: 140%;
   margin-left: 10px;
 }
-.analitics .analitics-item__arrow {
+.analitics__list .analitics-item__arrow {
   margin-left: auto;
   display: block;
   margin-left: auto;
@@ -1193,7 +1210,7 @@ ________________ .base {
   position: relative;
   z-index: 3;
 }
-.analitics .analitics-item__arrow svg {
+.analitics__list .analitics-item__arrow svg {
   width: clamp(16px, 2.2vw, 32px);
 }
 
@@ -1218,15 +1235,15 @@ ________________ .base {
     display: flex;
     flex-direction: column;
   }
-  .analitics .analitics__list {
-    width: 100%;
-  }
   .analitics .analitics__left {
     display: flex;
     justify-content: center;
     margin-top: -50px;
     margin-left: 0;
     background-size: contain;
+  }
+  .analitics__list {
+    width: 100%;
   }
 }
 .tasks {
@@ -1950,13 +1967,13 @@ ________________ .base {
   display: flex;
   align-items: center;
   gap: 50px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .start .start__btn {
   background-color: #262626;
   color: #FFF;
   font-family: "Manrope", serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-size: clamp(14px, 2vw, 24px);
   font-weight: 500;
   line-height: 1.1;
   border-radius: 5px;
@@ -2010,6 +2027,18 @@ ________________ .base {
   .start .start__text br {
     display: none;
   }
+  .start .start__btn {
+    background: none;
+    white-space: nowrap;
+    gap: 5px;
+    padding: 0;
+  }
+  .start .start__btn svg {
+    height: 12px;
+  }
+  .start .start__btns {
+    gap: 10px;
+  }
 }
 .products {
   margin: 50px 0;
@@ -2023,7 +2052,7 @@ ________________ .base {
   align-items: center;
   border-bottom: 1px solid var(--main-font);
   padding-bottom: clamp(25px, 3vw, 40px);
-  margin-bottom: 62px;
+  margin-bottom: clamp(20px, 2vw, 62px);
 }
 .products .swiper {
   width: 100%;
@@ -2072,7 +2101,7 @@ ________________ .base {
 .products .card-products__num {
   color: var(--contrast-color);
   font-family: "Geologica", serif;
-  font-size: 22px;
+  font-size: clamp(20px, 2.2vw, 22px);
   font-weight: 500;
   line-height: 1.1;
   text-transform: uppercase;
@@ -2080,7 +2109,7 @@ ________________ .base {
 .products .card-products__name {
   color: var(--main-font);
   font-family: "Manrope", serif;
-  font-size: clamp(24px, 1.8vw, 32px);
+  font-size: clamp(20px, 1.8vw, 32px);
   font-weight: 500;
   line-height: 1.1;
   white-space: nowrap;
@@ -2102,6 +2131,25 @@ ________________ .base {
   }
   .products .card-products__name {
     white-space: wrap;
+  }
+}
+@media (max-width: 450px) {
+  .products .products__btns {
+    display: none;
+  }
+  .products .swiper-scrollbar {
+    margin-bottom: 30px !important;
+  }
+  .products .card-products {
+    padding: 20px;
+    padding-bottom: 40px;
+    height: auto;
+  }
+  .products .card-products__top svg {
+    height: 70%;
+  }
+  .products .swiper {
+    height: 600px;
   }
 }
 .team {
@@ -2175,6 +2223,25 @@ ________________ .base {
   .team .team__btns {
     left: 0;
     bottom: -510px;
+  }
+}
+@media (max-width: 450px) {
+  .team {
+    margin: 75px 0;
+  }
+  .team .team__btns {
+    display: none;
+  }
+  .team .swiper-scrollbar {
+    display: none;
+  }
+  .team .team__header {
+    margin-bottom: 20px;
+  }
+  .team .swiper {
+    width: 100%;
+    height: 600px;
+    padding-top: 100px;
   }
 }
 .function {
@@ -2657,7 +2724,7 @@ ________________ .base {
   }
 }
 .plan {
-  margin-top: 190px;
+  margin-top: clamp(80px, 4vw, 190px);
   margin-bottom: 175px;
   border-radius: 60px;
   background: #1D1D1D;
@@ -2694,6 +2761,10 @@ ________________ .base {
   position: absolute;
   top: 0;
   right: 0;
+  border: 4px solid rgba(217, 217, 217, 0.34);
+  border-radius: 20px;
+  width: 560px;
+  z-index: -2;
 }
 .plan .plan__betw-svg {
   position: absolute;
@@ -2708,11 +2779,21 @@ ________________ .base {
   position: absolute;
   top: 35%;
   left: 0;
+  border: 4px solid rgba(217, 217, 217, 0.34);
+  border-radius: 20px;
+  width: 560px;
+  z-index: -2;
 }
 .plan .plan__card-dev {
   position: relative;
-  max-width: 560px;
+  z-index: -1;
+  width: 85%;
+  left: 7.5%;
   height: 297px;
+  border-top: 8px solid #1D1D1D;
+  margin-top: -6px;
+  margin-bottom: -6px;
+  border-bottom: 8px solid #1D1D1D;
 }
 .plan .plan__card-dev-header {
   display: flex;
@@ -2721,20 +2802,20 @@ ________________ .base {
 .plan .plan__svg {
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 0px;
 }
 .plan .plan__card-text-front {
   position: absolute;
   bottom: 30px;
-  left: 30px;
+  left: 0px;
 }
 .plan .plan__card_small-title {
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 0px;
   color: #727272;
   font-family: "Manrope", serif;
-  font-size: 28px;
+  font-size: clamp(20px, 2.6vw, 28px);
   font-weight: 700;
   line-height: 1.1;
 }
@@ -2800,24 +2881,34 @@ ________________ .base {
   }
 }
 @media (max-width: 620px) {
-  .plan .plan__img {
-    opacity: 0.6;
-    display: none;
+  .plan__card-front {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 4px solid rgba(217, 217, 217, 0.34);
+    border-radius: 20px;
+    max-width: 100%;
+    z-index: -2;
   }
-  .plan .plan__bottom {
-    margin-top: 20px;
+  .plan__card-back {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    border: 4px solid rgba(217, 217, 217, 0.34);
+    border-radius: 20px;
+    max-width: 100%;
+    z-index: -2;
   }
   .plan__betw-svg {
     display: none;
   }
-  .plan .plan__svg svg {
-    width: 70px;
+  .plan {
+    border-radius: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
-  .plan .plan__card-front {
-    position: static;
-  }
-  .plan .plan__card-back {
-    position: static;
+  .plan .plan__card-dev {
+    height: 200px;
   }
   .plan .plan__body {
     position: relative;
@@ -2825,8 +2916,52 @@ ________________ .base {
     flex-direction: column;
     gap: 20px;
   }
+  .plan .plan__card-text {
+    color: var(--main-font);
+    font-family: "Manrope", serif;
+    font-size: clamp(20px, 1.6vw, 36px);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .plan .plan__card-text br {
+    display: none;
+  }
+  .plan .plan__img {
+    opacity: 0.6;
+    display: none;
+  }
+  .plan .plan__bottom {
+    margin-top: 20px;
+  }
+  .plan .plan__svg {
+    top: 10px;
+  }
+  .plan .plan__svg svg {
+    width: 70px;
+  }
+  .plan .plan__card-back {
+    position: static;
+  }
+  .plan .plan__card-front {
+    position: static;
+  }
   .plan .plan__cards {
+    gap: 20px;
     flex-direction: column;
+    margin-top: 0px;
+  }
+  .plan .plan__card {
+    border-radius: 15px;
+    background: #101010;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .plan .card-plan__svg svg {
+    height: 46px;
   }
 }
 .models {
@@ -2897,14 +3032,14 @@ ________________ .base {
 .models .card-models__title {
   color: #FFF;
   font-family: "Manrope", serif;
-  font-size: 24px;
+  font-size: clamp(20px, 2vw, 24px);
   font-weight: 500;
   line-height: 110%;
 }
 .models .card-models__text {
   color: #E2E2E2;
   font-family: "Manrope", serif;
-  font-size: 16px;
+  font-size: clamp(14px, 1.8vw, 16px);
   font-weight: 300;
   line-height: 140%;
   white-space: nowrap;
@@ -2918,13 +3053,25 @@ ________________ .base {
   .models .models__card {
     width: 100%;
   }
+  .models .card-models__img {
+    width: 80%;
+    margin-left: 50px;
+    margin-top: -70px;
+  }
 }
 @media (max-width: 425px) {
+  .models {
+    margin: 75px 0;
+  }
   .models .card-models__text {
     white-space: wrap;
   }
   .models .card-models__text br {
     display: none;
+  }
+  .models .models__card {
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 .see .see__wrapper {
@@ -3052,7 +3199,7 @@ ________________ .base {
 .spec .item-spec__title {
   color: #101010;
   font-family: "Geologica", serif;
-  font-size: clamp(16px, 2vw, 28px);
+  font-size: clamp(15px, 2vw, 28px);
   font-weight: 400;
   line-height: 110%;
 }
@@ -3135,69 +3282,172 @@ ________________ .base {
   }
 }
 @media (max-width: 900px) {
-  .spec .item-spec-1 {
-    top: 35%;
-    left: 2%;
-  }
-  .spec .item-spec-3 {
-    top: -27%;
-    left: 22%;
-  }
-  .spec .item-spec-4 {
-    top: 0;
-    left: 60%;
-  }
-  .spec .item-spec-7 {
-    bottom: 13%;
-    left: 55%;
-  }
-}
-@media (max-width: 480px) {
   .spec .body-spec__title-back {
-    margin-bottom: -90px;
+    background-image: url(/img/svg/spec-akticom-back.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: center;
   }
   .spec .item-spec__point {
     display: none;
   }
-  .spec .spec__body {
-    margin-top: 0px;
-  }
   .spec .item-spec {
-    position: relative;
-    width: 275px;
-  }
-  .spec .body-spec {
+    position: absolute;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
+    z-index: 5;
+    border-radius: 10000px;
+    background: var(--contrast-color);
+    padding: 4px 10px 4px 4px;
+  }
+  .spec .item-spec__svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #5B12B9;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .spec .spec__body {
+    margin-top: 130px;
   }
   .spec .item-spec-1 {
-    top: 0;
-    left: 10%;
+    top: -20%;
+    left: 0;
   }
   .spec .item-spec-2 {
-    top: 0;
-    left: 10%;
-  }
-  .spec .item-spec-3 {
-    top: 0;
-    left: 10%;
-  }
-  .spec .item-spec-4 {
-    top: 0;
-    left: 10%;
-  }
-  .spec .item-spec-5 {
-    top: 0;
-    left: 10%;
+    top: -30%;
+    left: 50%;
   }
   .spec .item-spec-6 {
-    top: 0;
-    left: 10%;
+    bottom: 85%;
+    left: 40%;
+  }
+  .spec .item-spec-3 {
+    top: 65%;
+    left: 5%;
+  }
+  .spec .item-spec-4 {
+    top: 85%;
+    left: 50%;
+  }
+  .spec .item-spec-5 {
+    bottom: -20%;
+    left: 0;
   }
   .spec .item-spec-7 {
-    top: 0;
-    left: 10%;
+    bottom: -40%;
+    left: 30%;
+  }
+}
+.case-name__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 40px;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.case-name__btns {
+  display: flex;
+  gap: 10px;
+}
+
+.case-task__wrapper {
+  padding-block: 40px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.case-task__photo {
+  display: flex;
+  justify-content: center;
+}
+.case-task__photo img {
+  width: 100%;
+}
+
+.case-task__info {
+  padding: 80px 0 40px 0;
+}
+
+.display-case {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  padding: 80px 0 40px 0;
+}
+
+.case-done__wrapper {
+  padding-block: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.case-done__punkts .analitics__list {
+  width: 100%;
+}
+
+.case-concept__wrapper {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.case-concept__imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(10px, 2vw, 30px);
+}
+
+.case-result__wrapper {
+  padding-block: 80px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.case-result-block__title {
+  color: var(--contrast-color);
+}
+
+.case-result__numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.case-result__block {
+  display: grid;
+  gap: 20px;
+}
+
+.case-result-block__text {
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: clamp(16px, 2.2vw, 24px);
+  line-height: 110%;
+  color: var(--main-font);
+}
+
+@media (max-width: 1024px) {
+  .case-result__numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .display-case {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .case-done__punkts .analitics-item__title {
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 .footer {

@@ -259,6 +259,14 @@ body{
 .link:hover{
     color: var(--contrast-color);
 }
+.title-h1{
+    color: var(--main-font);
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    font-size: clamp(34px, 8vw, 96px);
+    line-height: 110%;
+    text-transform: uppercase;
+}
 
 .title-h2{
     color: var(--main-font);
@@ -276,7 +284,13 @@ body{
     line-height: 1.1;
     text-transform: uppercase;
 }
-
+.text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 120%;
+    color: var(--main-font);
+}
 
 
 
@@ -1307,14 +1321,14 @@ ________________
     
     .analitics__right {
     }
-    .analitics__list{
-        display: flex;
-        flex-direction: column;
-        margin-top: 13px;
-        width: clamp(290px, 60vw, 1000px);
+   
 
-    } 
-    
+}
+.analitics__list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 13px;
+    width: clamp(290px, 60vw, 1000px);
     .analitics-item{
         display: flex;
         align-items: center;
@@ -1330,7 +1344,7 @@ ________________
         font-size: clamp(14px, 2vw, 24px);
         font-weight: 500;
         line-height: 110%;
-
+    
     }
     .analitics-item__title {
         color: var(--main-font);
@@ -1360,8 +1374,9 @@ ________________
     .analitics-item__arrow svg{
         width: clamp(16px, 2.2vw, 32px);
     }
+} 
 
-}
+
 
 @media (max-width:960px) {
     .analitics{
@@ -1387,9 +1402,7 @@ ________________
             display: flex;
             flex-direction: column;
         }
-        .analitics__list{
-            width: 100%;
-        } 
+        
         .analitics__left{
             display: flex;
             justify-content: center;
@@ -1398,6 +1411,9 @@ ________________
             background-size: contain;
         }
     }
+    .analitics__list{
+        width: 100%;
+    } 
   
 }
 
@@ -2251,13 +2267,13 @@ ________________
         display: flex;
         align-items: center;
         gap: 50px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
     .start__btn {
         background-color: #262626;
         color: #FFF;
         font-family: 'Manrope', serif;
-        font-size: clamp(16px, 2vw, 24px);
+        font-size: clamp(14px, 2vw, 24px);
         font-weight: 500;
         line-height: 1.1;
         border-radius: 5px;
@@ -2316,6 +2332,19 @@ ________________
                display: none;
            }
        }
+       .start__btn{
+            background: none;
+            white-space: nowrap;
+            gap: 5px;
+            padding: 0;
+            svg{
+                height: 12px;
+            }
+       }
+       .start__btns{
+            gap: 10px;
+       }
+      
     }
 
    
@@ -2334,7 +2363,7 @@ ________________
     }
     .products__header{
         @include header-line;
-        margin-bottom: 62px;
+        margin-bottom: clamp(20px, 2vw, 62px);
     }
     .swiper {
         width: 100%;
@@ -2379,6 +2408,7 @@ ________________
     .card-products__top{
         display: flex;
         justify-content: space-between;
+     
     }
     .card-products__bottom{
         display: flex;
@@ -2389,7 +2419,7 @@ ________________
     .card-products__num {
         color: var(--contrast-color);
         font-family: 'Geologica', serif;
-        font-size: 22px;
+        font-size: clamp(20px, 2.2vw, 22px);
         font-weight: 500;
         line-height: 1.1;
         text-transform: uppercase;
@@ -2397,7 +2427,7 @@ ________________
     .card-products__name {
         color: var(--main-font);
         font-family: 'Manrope', serif;
-        font-size: clamp(24px, 1.8vw, 32px);
+        font-size: clamp(20px, 1.8vw, 32px);
         font-weight: 500;
         line-height: 1.1;
         white-space: nowrap;
@@ -2419,6 +2449,28 @@ ________________
         }
         .card-products__name {
             white-space: wrap; 
+        }
+    }
+}
+@media (max-width:450px) {
+    .products {
+        .products__btns {
+            display: none;
+        }
+        .swiper-scrollbar{
+            margin-bottom: 30px !important;
+        }
+        .card-products{
+            padding: 20px;
+            padding-bottom: 40px;
+            height: auto;
+        }
+        .card-products__top svg{
+            height: 70%;
+        }
+        
+        .swiper {
+            height: 600px;
         }
     }
 }
@@ -2501,6 +2553,26 @@ ________________
     .team .team__btns {
         left: 0;
         bottom: -510px;
+    }
+
+}
+@media (max-width:450px) {
+    .team {
+        margin: 75px 0;
+        .team__btns {
+            display: none;
+        }
+        .swiper-scrollbar{
+            display: none;
+        }
+        .team__header{
+            margin-bottom: 20px;
+        }
+        .swiper {
+            width: 100%;
+            height: 600px;
+            padding-top: 100px;
+        }
     }
 
 }
@@ -3067,7 +3139,7 @@ ________________
 
 
 .plan{
-    margin-top: 190px;
+    margin-top: clamp(80px, 4vw, 190px);
     margin-bottom: 175px;
     border-radius: 60px;
     background: #1D1D1D;
@@ -3109,12 +3181,13 @@ ________________
         position: absolute;
         top: 0;
         right: 0;
+        border: 4px solid rgba(217, 217, 217, 0.34);
+        border-radius: 20px;
+        width: 560px;
+        z-index: -2;
     }
     .plan__betw-svg{
-        // max-width: 100%;
-        // width: clamp(350px, 54vw, 70.71%);
-
-        position: absolute;
+         position: absolute;
         top: 13%;
         left: 45%;
         transform: translateX(-45%);
@@ -3128,15 +3201,27 @@ ________________
         position: absolute;
         top: 35%;
         left: 0;
+        border: 4px solid rgba(217, 217, 217, 0.34);
+        border-radius: 20px;
+        width: 560px;
+        z-index: -2;
     }
 
 
 
     .plan__card-dev{
         position: relative;
-        max-width: 560px;
+        z-index: -1;
+        width: 85%;
+        left: 7.5%;
         height: 297px;
+        border-top: 8px solid #1D1D1D;
+        margin-top: -6px;
+        margin-bottom: -6px;
+        border-bottom: 8px solid #1D1D1D;
+       
     }
+
     .plan__card-dev-header{
         display: flex;
         justify-content: space-between;
@@ -3145,22 +3230,22 @@ ________________
     .plan__svg{
         position: absolute;
         top: 30px;
-        left: 30px;
+        left: 0px;
     }
     .plan__card-text-front{
         position: absolute;
         bottom: 30px;
-        left: 30px;
+        left: 0px;
        
     }
 
     .plan__card_small-title{
         position: absolute;
         top: 30px;
-        right: 30px;
+        right: 0px;
         color: #727272;
         font-family: 'Manrope', serif;
-        font-size: 28px;
+        font-size: clamp(20px, 2.6vw, 28px);
         font-weight: 700;
         line-height: 1.1;
     }
@@ -3244,48 +3329,101 @@ ________________
 }
 
 @media (max-width:620px) {
-    .plan .plan__img{
-        opacity: 0.6;
-        display: none;
+
+    .plan__card-front{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 4px solid rgba(217, 217, 217, 0.34);
+        border-radius: 20px;
+        max-width: 100%;
+        z-index: -2;
     }
-    .plan .plan__bottom {
-        margin-top: 20px;
+    
+    .plan__card-back{
+        position: absolute;
+        top: 35%;
+        left: 0;
+        border: 4px solid rgba(217, 217, 217, 0.34);
+        border-radius: 20px;
+        max-width: 100%;
+        z-index: -2;
     }
   
     .plan__betw-svg{
         display: none;
     }
-    .plan .plan__svg svg{
-        width: 70px;
-    }
 
-
-
-    .plan .plan__card-front{
-        position: static;
-        // top: 5%;
-        // right: 0;
+    
+      
+    .plan{
+        border-radius: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .plan__card-dev{
+            height: 200px;           
+        }
+        .plan__body {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .plan__card-text {
+            color: var(--main-font);
+            font-family: "Manrope", serif;
+            font-size: clamp(20px, 1.6vw, 36px);
+            font-weight: 600;
+            line-height: 1.1;
+            br{
+                display: none;
+            }
+        }
+        .plan__img{
+            opacity: 0.6;
+            display: none;
+        }
+        .plan__bottom {
+            margin-top: 20px;
+        }
+        .plan__svg {
+            top: 10px;
+            svg {
+                width: 70px;
+            }
+        }
+        .plan__card-back{
+            position: static;
+            // top: 35%;
+            // left: 0;
+        }
+        .plan__card-front{
+            position: static;
+            // top: 5%;
+            // right: 0;
+        }
+        .plan__cards {
+            gap: 20px;
+            flex-direction: column;
+            margin-top: 0px;
+        }
+        .plan__card {
+            border-radius: 15px;
+            background: #101010;
+            padding: 20px;
+            height: auto;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-plan__svg{
+            svg{
+                height: 46px;
+            }
+        }
     }
-    .plan .plan__card-back{
-        position: static;
-        // top: 35%;
-        // left: 0;
-    }
-    .plan .plan__body {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .plan .plan__cards {
-        // margin-top: 100px;
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
-        // gap: 40px;
-        flex-direction: column;
-    }
+   
 
 }
 
@@ -3369,14 +3507,14 @@ ________________
     .card-models__title {
         color: #FFF;
         font-family: 'Manrope', serif;
-        font-size: 24px;
+        font-size: clamp(20px, 2vw, 24px);
         font-weight: 500;
         line-height: 110%;
     }
     .card-models__text {
         color: #E2E2E2;
         font-family: 'Manrope', serif;
-        font-size: 16px;
+        font-size: clamp(14px, 1.8vw, 16px);
         font-weight: 300;
         line-height: 140%;
         white-space: nowrap;
@@ -3386,19 +3524,33 @@ ________________
 
 
 @media (max-width:840px) {
-    .models .models__cards {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .models .models__card {
-        width: 100%;
+    .models {
+        .models__cards {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .models__card {
+            width: 100%;
+        }
+        .card-models__img {
+            width: 80%;
+            margin-left: 50px;
+            margin-top: -70px;
+        }
     }
 }
 @media (max-width:425px) {
-    .models .card-models__text {
-        white-space: wrap;
-        br{
-            display: none;
+    .models {
+        margin: 75px 0;
+        .card-models__text {
+            white-space: wrap;
+            br{
+                display: none;
+            }
+        }
+        .models__card {
+            height: auto;
+            aspect-ratio: 1;
         }
     }
 
@@ -3480,6 +3632,8 @@ ________________
 
 
 
+
+
 .spec {
     margin-top: 150px;
 
@@ -3553,7 +3707,7 @@ ________________
     .item-spec__title {
         color: #101010;
         font-family: 'Geologica', serif;
-        font-size: clamp(16px, 2vw, 28px);
+        font-size: clamp(15px, 2vw, 28px);
         font-weight: 400;
         line-height: 110%;
     }
@@ -3639,75 +3793,233 @@ ________________
 }
 
 @media (max-width:900px) {
-    .spec .item-spec-1 {
-        top: 35%;
-        left: 2%;
+    .spec{
+        .body-spec__title-back{
+            background-image: url(/img/svg/spec-akticom-back.png);
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-position: center;
+        }
+        .item-spec__point {
+            display: none;
+        }
+        .item-spec {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 5;
+            border-radius: 10000px;
+            background: var(--contrast-color);
+            padding: 4px 10px 4px 4px;
+        }
+        .item-spec__svg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #5B12B9;
+            padding: 5px;
+            width: 30px;
+            height: 30px;
+    
+    
+        }
     }
-    .spec .item-spec-3 {
-        top: -27%;
-        left: 22%;
-    }
-    .spec .item-spec-4 {
-        top: 0;
-        left: 60%;
-    }
-    .spec .item-spec-7 {
-        bottom: 13%;
-        left: 55%;
-    }
+
 }
 
 @media (max-width:480px) {
-    .spec .body-spec__title-back {
-        margin-bottom: -90px;
-    }
-    .spec .item-spec__point {
-        display: none;
-    }
-    .spec .spec__body {
-        margin-top: 0px;
-    }
-    .spec .item-spec {
-        position: relative;
-        width: 275px;
-    }
-    .spec .body-spec {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .spec .item-spec-1 {
-        top: 0;
-        left: 10%;
-    }
-    .spec .item-spec-2 {
-        top: 0;
-        left: 10%;
-    }
-    .spec .item-spec-3 {
-        top: 0;
-        left: 10%;
-    }
-    .spec .item-spec-4 {
-        top: 0;
-        left: 10%;
-    }
-    .spec .item-spec-5 {
-        top: 0;
-        left: 10%;
-    }
-    .spec .item-spec-6 {
-        top: 0;
-        left: 10%;
-    }
-    .spec .item-spec-7 {
-        top: 0;
-        left: 10%;
-    }
+
+        .spec{
+            .spec__body{
+                margin-top: 130px;
+            }
+            .item-spec-1 {
+                    top: -20%;
+                    left: 0;
+                }
+                .item-spec-2 {
+                    top: -30%;
+                    left: 50%;
+                }
+                .item-spec-6 {
+                    bottom: 85%;
+                    left: 40%;
+                }
+
+
+
+                .item-spec-3 {
+                    top: 65%;
+                    left: 5%;
+                }
+                .item-spec-4 {
+                    top: 85%;
+                    left: 50%;
+                }
+                .item-spec-5 {
+                    bottom: -20%;
+                    left: 0;
+                }
+                .item-spec-7 {
+                    bottom: -40%;
+                    left: 30%;
+                }
+        }
+     
+   
 
 }
 
 
+
+
+
+
+.case-name__wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 40px;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+
+}
+.case-name__btns{
+    display: flex;
+    gap: 10px;
+}
+
+
+.case-task__wrapper{
+    padding-block: 40px;
+    border-bottom: 1px solid #d9d9d9;
+
+}
+
+.case-task__photo {
+    display: flex;
+    justify-content: center;
+    img{
+        width: 100%;
+    }
+}
+
+.case-task__info {
+
+    padding: 80px 0 40px 0;
+}
+.display-case{
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    padding: 80px 0 40px 0;
+}
+
+.case-task__title {
+}
+
+.case-task__text {
+}
+
+
+
+.case-done__wrapper {
+    padding-block: 40px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.case-done__title {
+}
+.case-done__punkts {
+    
+    .analitics__list {
+        width: 100%;
+    }
+}
+
+
+
+
+.case-concept__wrapper {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.case-concept__title {
+}
+.case-concept__imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(10px, 2vw, 30px);
+}
+
+
+
+
+
+
+.case-result__wrapper {
+    padding-block: 80px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.case-result-block__title {
+    color: var(--contrast-color);
+}
+.case-result__numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+.case-result__block {
+    display: grid;
+    gap: 20px;
+}
+
+.case-result-block__text {
+    font-family: 'Manrope';
+    font-weight: 500;
+    font-size: clamp(16px, 2.2vw, 24px);
+    line-height: 110%;
+    color: var(--main-font);
+}
+
+
+
+
+
+@media (max-width:1024px) {
+    .case-result__numbers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+}
+
+@media (max-width:768px) {
+    .display-case{
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+    }
+
+ 
+ 
+}
+@media (max-width:500px) {
+    .case-done__punkts {
+    
+        .analitics-item__title {
+            width: fit-content;
+        }
+        .analitics-item__text {
+        }
+    }
+ 
+}
 
 
 
@@ -3811,3 +4123,22 @@ ________________
     top: -4px !important;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1156,7 +1156,7 @@ ________________ .base {
   .base__tabs .item-tabs-base__img--main {
     overflow: hidden;
     position: absolute;
-    width: 100%;
+    width: 77%;
     left: 0;
     top: 7%;
     max-width: none;

@@ -848,7 +848,7 @@ ________________ .base {
   position: absolute;
   left: 18%;
   top: 0;
-  max-width: 100%;
+  max-width: 77%;
   z-index: -1;
 }
 .base__tabs .item-tabs-base__img.is-active {
@@ -1156,7 +1156,7 @@ ________________ .base {
   .base__tabs .item-tabs-base__img--main {
     overflow: hidden;
     position: absolute;
-    width: 77%;
+    width: 100%;
     left: 0;
     top: 7%;
     max-width: none;

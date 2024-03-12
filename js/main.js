@@ -251,16 +251,17 @@ const swiperProducts = new Swiper('.products__body', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  spaceBetween: 40,
   breakpoints: {
     320: {
-      slidesPerView: 1.1
+      slidesPerView: 1.4,
+      spaceBetween: 20
     },
     485: {
       slidesPerView: 1.65
     },
     740: {
-      slidesPerView: 1.95
+      slidesPerView: 1.95,
+      spaceBetween: 40
     },
     1100: {
       slidesPerView: 2.95
@@ -279,16 +280,17 @@ const swiperTeam = new Swiper('.team__body', {
     nextEl: '.team-next',
     prevEl: '.team-prev'
   },
-  spaceBetween: 40,
   breakpoints: {
     320: {
-      slidesPerView: 1.1
+      slidesPerView: 1.35,
+      spaceBetween: 20
     },
     485: {
       slidesPerView: 1.8
     },
     740: {
-      slidesPerView: 3.4
+      slidesPerView: 3.4,
+      spaceBetween: 40
     },
     1100: {
       slidesPerView: 4.4

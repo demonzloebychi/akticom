@@ -1051,7 +1051,7 @@ body.lock {
   display: none;
   position: absolute;
   left: 18%;
-  top: 0;
+  top: -15%;
   max-width: 77%;
   z-index: -1;
 }
@@ -1304,6 +1304,11 @@ body.lock {
   }
 }
 @media (max-width: 450px) {
+  .base__tabs .item-tabs-base__img-back-reklama {
+    position: relative;
+    margin-top: -35px;
+    margin-left: -95px;
+  }
   .base__tabs .item-tabs-base__img-back {
     position: relative;
     margin-left: -30px;
@@ -1445,16 +1450,6 @@ body.lock {
   line-height: 1.4;
   max-width: 60%;
 }
-.year .year__body .year__left .year__info--design {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 25px;
-}
 .year .year__body .year__left .year__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1482,6 +1477,21 @@ body.lock {
   padding-bottom: clamp(15px, 2vw, 24px);
   border-radius: 8px;
 }
+.year .year__body .year__left .year__info--design {
+  margin-top: -325px;
+  margin-left: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 25px;
+}
+.year .year__body .year__left .year__title--design {
+  font-size: clamp(24px, 4vw, 64px);
+}
 .year .year__body .year__right {
   position: relative;
   margin-right: 25px;
@@ -1492,7 +1502,7 @@ body.lock {
   background: radial-gradient(farthest-side, rgba(182, 42, 232, 0.5647058824), transparent);
 }
 .year .year__body .year__right .year__img--design {
-  margin-left: -50%;
+  margin-left: -10%;
   width: 180%;
 }
 .year .year__body .year__right .year__img img {
@@ -1528,7 +1538,7 @@ body.lock {
 .year .year__body .year__right .year__circles {
   position: absolute;
   top: -5%;
-  right: -32%;
+  right: -20%;
 }
 .year .year__body .year__right .year__circles svg {
   width: clamp(280px, 35vw, 680px);
@@ -1556,15 +1566,15 @@ body.lock {
   .year .year__body .year__right .year__circles svg {
     width: clamp(280px, 75vw, 680px);
   }
+  .year .year__body .year__left {
+    gap: 20px;
+  }
   .year .year__body .year__left .year__text {
     -webkit-text-stroke: 1px #757575;
     -webkit-writing-mode: horizontal-tb;
     -ms-writing-mode: lr-tb;
     writing-mode: horizontal-tb;
     font-size: 36px;
-  }
-  .year .year__body .year__left {
-    gap: 20px;
   }
   .year__body {
     -webkit-box-orient: vertical;
@@ -2894,6 +2904,9 @@ body.lock {
   .products .swiper {
     height: 600px;
   }
+  .products--reklama .swiper-scrollbar {
+    margin-bottom: 120px !important;
+  }
 }
 .team {
   margin: 150px 0;
@@ -3433,7 +3446,7 @@ body.lock {
   position: absolute;
   z-index: -2;
   top: 25%;
-  right: 10%;
+  right: 5%;
   background: radial-gradient(closest-side, rgba(151, 71, 255, 0.2), transparent);
 }
 .info .info__img p {
@@ -3595,7 +3608,11 @@ body.lock {
     height: 300px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
+  .info-reklama {
+    margin-top: 150px;
+    margin-bottom: 20px;
+  }
   .info .info__cards--design {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;

@@ -1029,6 +1029,7 @@ body.lock {
   font-weight: 400;
   line-height: 1.5;
   margin-top: clamp(7px, 1.8vw, 40px);
+  max-width: 540px;
 }
 .base__tabs .background-image-pink {
   position: absolute;
@@ -1043,6 +1044,22 @@ body.lock {
   top: -60%;
   z-index: 0;
   max-width: 100%;
+}
+.base__tabs .background-image-pink-top {
+  position: absolute;
+  right: -12%;
+  top: -120%;
+  z-index: 0;
+  max-width: 100%;
+  z-index: -3;
+}
+.base__tabs .background-image-pink-center {
+  position: absolute;
+  right: -12%;
+  top: -90%;
+  z-index: 0;
+  max-width: 100%;
+  z-index: -3;
 }
 .base__tabs .background-image-pink-mobile {
   display: none;
@@ -1112,6 +1129,16 @@ body.lock {
   position: relative;
   margin-top: 30px;
   margin-left: -95px;
+}
+.base__tabs .item-tabs-base__img-back--support {
+  margin-top: -35px;
+  margin-left: -25px;
+}
+.base__tabs .item-tabs-base__img-back--analitics {
+  margin-top: -20px;
+}
+.base__tabs .item-tabs-base__img-back--design {
+  margin-left: -20px;
 }
 .base__tabs .item-tabs-base__img-line-tab-1 {
   position: absolute;
@@ -1610,7 +1637,7 @@ body.lock {
   }
 }
 .analitics {
-  margin: 375px 0 175px 0;
+  margin: 375px 0 50px 0;
 }
 .analitics .analitics__title {
   display: -webkit-box;
@@ -2249,6 +2276,7 @@ body.lock {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.1;
+  max-width: 370px;
 }
 .connect .connect__right {
   width: 65%;
@@ -3049,6 +3077,7 @@ body.lock {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  gap: 10px;
 }
 .function .f-card__svg svg {
   max-width: 100%;
@@ -3220,7 +3249,7 @@ body.lock {
     grid-template-columns: 1fr 1fr;
   }
   .tech-price .tp-card {
-    height: 50vw;
+    height: 47vw;
   }
   .tech-price .tp-card:not(:first-child) {
     margin-left: 0px;
@@ -3235,7 +3264,7 @@ body.lock {
     grid-template-columns: 1fr;
   }
   .tech-price .tp-card {
-    height: 100vw;
+    height: 95vw;
   }
   .tech-price .tp-card:not(:first-child) {
     margin-left: 0px;
@@ -3268,6 +3297,7 @@ body.lock {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin-top: 25px;
 }
 .report .report__left {
   display: -webkit-box;
@@ -3278,7 +3308,7 @@ body.lock {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: clamp(20px, 3vw, 30px);
-  max-width: 505px;
+  max-width: 540px;
 }
 .report .left-report__title {
   color: var(--main-font);
@@ -3293,6 +3323,7 @@ body.lock {
   font-size: clamp(14px, 1.6vw, 20px);
   font-weight: 400;
   line-height: 1.4;
+  max-width: 505px;
 }
 .report .left-report__btn {
   color: #404040;
@@ -3330,9 +3361,10 @@ body.lock {
   width: clamp(300px, 50vw, 67%);
   position: relative;
   margin-right: 3%;
-  background-image: url(/img/svg/fiol-back.png);
+  background-image: url(/img/back-see-rekl.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .report .report__background-title {
   position: absolute;
@@ -3349,7 +3381,7 @@ body.lock {
 }
 .report .report__svg {
   position: absolute;
-  top: 27%;
+  top: 24%;
   right: 20%;
 }
 .report .report__svg svg {
@@ -3905,7 +3937,7 @@ body.lock {
   }
 }
 .models {
-  margin: 175px 0;
+  margin: 205px 0;
 }
 .models .models__header {
   margin-bottom: 62px;

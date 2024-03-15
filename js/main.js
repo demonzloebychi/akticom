@@ -246,6 +246,17 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+const anchors = document.querySelectorAll("a[href*='#']");
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const blockID = anchor.getAttribute('href');
+    document.querySelector(' ' + blockID).scrollIntoView({
+      behavior: "smooth",
+      block: 'start'
+    });
+  });
+}
 const swiperProducts = new Swiper('.products__body', {
   navigation: {
     nextEl: '.swiper-button-next',

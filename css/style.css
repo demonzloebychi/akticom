@@ -1069,7 +1069,7 @@ body.lock {
   position: absolute;
   left: 18%;
   top: -15%;
-  max-width: 77%;
+  max-width: 79%;
   z-index: -1;
 }
 .base__tabs .item-tabs-base__img.is-active {
@@ -3423,7 +3423,7 @@ body.lock {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 260px;
+  gap: 160px;
 }
 .info .info__view {
   text-align: center;
@@ -3477,7 +3477,7 @@ body.lock {
   max-width: 60%;
   position: absolute;
   z-index: -2;
-  top: 25%;
+  top: 20%;
   right: 5%;
   background: radial-gradient(closest-side, rgba(151, 71, 255, 0.2), transparent);
 }
@@ -3597,7 +3597,7 @@ body.lock {
 }
 
 .info-reklama {
-  margin-top: 500px;
+  margin-top: 550px;
 }
 
 @media (max-width: 840px) {

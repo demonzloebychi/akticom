@@ -2255,10 +2255,21 @@ body.lock {
   padding-top: clamp(15px, 2vw, 24px);
   padding-bottom: clamp(15px, 2vw, 24px);
 }
+.project .tab-project__svg {
+  display: block;
+  max-width: 228px;
+  margin-top: auto;
+  margin-left: auto;
+}
 .project .project__img {
   max-width: 1160px;
 }
 
+@media (max-width: 1500px) {
+  .project .tab-project__svg {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .project {
     margin: 80px 0;

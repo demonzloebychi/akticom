@@ -661,6 +661,10 @@ body.lock {
   border-bottom: 1px solid #d9d9d9;
 }
 
+.case-done__title {
+  padding-top: 30px;
+}
+
 .case-done__punkts .analitics__list {
   width: 100%;
 }
@@ -1107,7 +1111,7 @@ body.lock {
 }
 .base__tabs .main-closeset {
   left: 29%;
-  top: 0;
+  top: -18%;
   max-width: 49%;
   z-index: -1;
 }
@@ -1118,11 +1122,16 @@ body.lock {
   z-index: -1;
 }
 .base__tabs .base-background--support {
-  top: -6%;
+  top: -15%;
+  max-width: 55%;
 }
 .base__tabs .base-background--design {
   max-width: 57%;
   top: -20%;
+}
+.base__tabs .base-background--analitics {
+  left: 41%;
+  top: -14%;
 }
 .base__tabs .item-tabs-base__texts {
   position: absolute;
@@ -1464,7 +1473,7 @@ body.lock {
 }
 
 .year {
-  margin-top: 160px;
+  margin-top: 70px;
 }
 .year .year__body--design {
   display: -webkit-box;
@@ -1601,11 +1610,11 @@ body.lock {
 }
 .year .year__body .year__right .year__circles {
   position: absolute;
-  top: 2%;
-  right: -20%;
+  top: -2%;
+  right: -27%;
 }
 .year .year__body .year__right .year__circles svg {
-  width: clamp(280px, 35vw, 680px);
+  width: clamp(280px, 45vw, 740px);
 }
 
 @media (max-width: 1020px) {
@@ -3000,6 +3009,9 @@ body.lock {
   .products .swiper-scrollbar--reklama {
     margin-bottom: 90px !important;
   }
+  .products .swiper-scrollbar--analitics {
+    margin-bottom: 30px !important;
+  }
 }
 @media (max-width: 375px) {
   .products .swiper-scrollbar {
@@ -3011,9 +3023,12 @@ body.lock {
   .products .swiper-scrollbar--reklama {
     margin-bottom: 120px !important;
   }
+  .products .swiper-scrollbar--analitics {
+    margin-bottom: 90px !important;
+  }
 }
 .team {
-  margin: 90px 0 150px 0;
+  margin: 60px 0 150px 0;
 }
 .team .team__body {
   position: relative;
@@ -3690,7 +3705,8 @@ body.lock {
   z-index: -2;
   top: 20%;
   right: 5%;
-  background: radial-gradient(closest-side, rgba(151, 71, 255, 0.2), transparent);
+  background-image: url(/img/svg/info-fiol-circle.png);
+  background-repeat: no-repeat;
 }
 .info .info__img p {
   opacity: 0.5;
@@ -3919,7 +3935,7 @@ body.lock {
   position: absolute;
   z-index: -2;
   top: 20%;
-  right: 0;
+  right: 3%;
   background: radial-gradient(closest-side, rgba(184, 255, 32, 0.2), transparent);
 }
 .plan .plan__card-front {
@@ -3995,6 +4011,10 @@ body.lock {
   top: 15%;
   left: 0;
   z-index: -3;
+  font-size: clamp(40px, 5vw, 70px);
+}
+.plan .plan__back-text--mini {
+  font-size: clamp(30px, 5vw, 60px);
 }
 .plan .plan__bottom {
   margin-top: 350px;
@@ -4335,14 +4355,14 @@ body.lock {
 }
 .see .see__img-l {
   margin-left: -100px;
-  background-image: url(../img/back-see-rekl.png);
+  background-image: url(../img/svg/back-see-rekl.png);
   background-size: 110%;
   background-repeat: no-repeat;
   background-position: center;
 }
 .see .see__img-r {
   margin-right: -120px;
-  background-image: url(../img/back-see-rekl-2.png);
+  background-image: url(../img/svg/back-see-rekl-2.png);
   background-size: 115%;
   background-repeat: no-repeat;
   background-position: center;
@@ -4437,6 +4457,16 @@ body.lock {
 .spec .body-spec__title-back svg:nth-child(1) {
   -webkit-filter: blur(4px);
   filter: blur(4px);
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-block: 100px;
+  -webkit-transform: translateY(-100px);
+  -ms-transform: translateY(-100px);
+  transform: translateY(-100px);
+  background-image: url(/img/back-razm.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .spec .body-spec__title-svg {
   position: absolute;

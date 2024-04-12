@@ -315,6 +315,43 @@ const swiperTeam = new Swiper('.team__body', {
     draggable: true
   }
 });
+const swiperPhoto = new Swiper('.photo-items__wrapper', {
+  navigation: {
+    nextEl: '.photo-items-next',
+    prevEl: '.photo-items-prev'
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.1,
+      spaceBetween: 20
+    },
+    485: {
+      slidesPerView: 1.5
+    },
+    740: {
+      slidesPerView: 1.8
+    },
+    1100: {
+      slidesPerView: 2.4,
+      spaceBetween: 50
+    },
+    1620: {
+      slidesPerView: 2.7
+    }
+  }
+});
+const spoilerItems = document.querySelectorAll(".spoiler-item");
+for (let i = 0; i < spoilerItems.length; i++) {
+  spoilerItems[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    for (let j = 0; j < spoilerItems.length; j++) {
+      if (spoilerItems[j] !== this) {
+        spoilerItems[j].classList.remove("active");
+      }
+    }
+  });
+}
+;
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map

@@ -352,6 +352,39 @@ for (let i = 0; i < spoilerItems.length; i++) {
   });
 }
 ;
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTop = document.getElementById("back-to-top");
+
+  // function handleScroll() {
+
+  //   const backToTop = document.getElementById("back-to-top");
+
+  //   // handleScroll будет вызываться каждый раз, когда пользователь прокручивает страницу, теперь нужно общее количество пикселей, которые  можно прокрутить
+
+  //   var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;  // scrollHeight дает высоту элемента, включая ту часть, которая не видна из-за переполнения, clientHeight дает внутреннюю высоту элемента в пикселях, которая является высотой видимой части
+  //                                                                           //Если вычитать из scrollHeight clientHeight, получим общее количество пикселей, которые можно прокрутить
+
+  //   if ((rootElement.scrollTop / scrollTotal > 0.76)) {                      //scrollTotal  представляет собой максимальное количество пикселей, которые можно прокручивать по вертикали
+  //                                                                            //разделив количество прокручиваемых пикселей на общее количество пикселей, которые  можно прокрутить, получим соотношение от 0 до 1
+  //     backToTop.style.display = 'block';
+  //   } else {
+
+  //     backToTop.style.display = 'none';
+  //   }
+  // }
+
+  // Плавная прокрутка при клике на кнопку
+
+  backToTop.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
+// document.addEventListener("scroll", handleScroll);
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map

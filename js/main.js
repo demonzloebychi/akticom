@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
-/*var __webpack_exports__ = {};
+var __webpack_exports__ = {};
 /*!************************!*\
   !*** ./src/js/main.js ***!
-  \************************/*\
+  \************************/
 var images = document.images,
   images_total_count = images.length,
   images_loaded_count = 0;

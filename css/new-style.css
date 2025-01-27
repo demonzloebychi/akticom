@@ -117,22 +117,28 @@
 }
 
 .case-release__block {
-    font-family: "Manrope";
-    font-weight: 500;
-    font-size: clamp(16px, 2.2vw, 28px);
-    line-height: 110%;
-    color: var(--main-font);
+    display: flex;
+    gap: 10px;
+    align-items: end;
 }
-
-.case-release__block::first-letter {
+.case-release__block__title {
     color: var(--contrast-color);
     font-family: "Geologica", sans-serif;
     font-size: clamp(30px, 4vw, 72px);
     font-weight: 400;
     line-height: 1.1;
     text-transform: uppercase;
+
 }
 
+.case-release__block__text {
+    font-family: "Manrope";
+    font-weight: 500;
+    font-size: clamp(16px, 2.2vw, 28px);
+    line-height: 110%;
+    color: var(--main-font);
+    padding-bottom: 5px;
+}
 
 
 

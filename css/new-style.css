@@ -10,7 +10,6 @@
 
 .case-link {
     color: var(--main-font);
-    text-decoration: underline;
 }
 .case-link:active {
     color: var(--contrast-color);
@@ -22,7 +21,7 @@
     }
     
 }
-
+ 
 
 
 
@@ -63,8 +62,9 @@
 
 
 .case-budget__content {
-    display: block;
-    width: fit-content; 
+    display: flex;
+    gap: 15px;
+    align-items: end;
 }
 
 
@@ -79,6 +79,7 @@
     line-height: 110%;
     color: var(--main-font);
     text-align: end;
+    margin-bottom: 5px;
 }
 
 
